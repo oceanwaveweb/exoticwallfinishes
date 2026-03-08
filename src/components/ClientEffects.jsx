@@ -23,21 +23,7 @@ export default function ClientEffects() {
             elem.addEventListener('mouseleave', removeHover);
         });
 
-        // --- Fullscreen Menu ---
-        const menuTrigger = document.querySelector('.menu-trigger');
-        const menuClose = document.querySelector('.menu-close');
-        const menuOverlay = document.querySelector('.menu-overlay');
-        const navLinks = document.querySelectorAll('.nav-link');
 
-        const openMenu = () => menuOverlay?.classList.add('active');
-        const closeMenu = () => menuOverlay?.classList.remove('active');
-
-        menuTrigger?.addEventListener('click', openMenu);
-        menuClose?.addEventListener('click', closeMenu);
-
-        navLinks.forEach(link => {
-            link.addEventListener('click', closeMenu);
-        });
 
         // --- Scroll Animations (Intersection Observer) ---
         const reveals = document.querySelectorAll('.reveals');
@@ -87,11 +73,7 @@ export default function ClientEffects() {
                 elem.removeEventListener('mouseenter', addHover);
                 elem.removeEventListener('mouseleave', removeHover);
             });
-            menuTrigger?.removeEventListener('click', openMenu);
-            menuClose?.removeEventListener('click', closeMenu);
-            navLinks.forEach(link => {
-                link.removeEventListener('click', closeMenu);
-            });
+
             revealObserver.disconnect();
             window.removeEventListener('scroll', handleScroll);
         };

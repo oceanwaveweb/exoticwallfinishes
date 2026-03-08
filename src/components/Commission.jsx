@@ -2,7 +2,7 @@ export default function Commission() {
     return (
         <section className="commission" id="commission">
             <div className="container text-center reveals fade-in-up">
-                <span className="overline">03 / Initiate</span>
+                <span className="overline">03 / Contact</span>
                 <h2 className="display-title">Commence<br />The Protocol</h2>
 
                 <form className="minimal-form">

@@ -1,3 +1,5 @@
+import { Video } from "lucide-react";
+
 export default function Exhibition() {
     return (
         <section className="exhibition" id="exhibition">
@@ -30,7 +32,9 @@ export default function Exhibition() {
 
                     <div className="gallery-item reveals fade-in-up margin-huge">
                         <div className="aspect-square">
-                            <img src="/images/portfolio_bathroom_1772916040233.png" alt="Tadelakt Spa Bathroom" />
+                            <video src="/images/portfolio_bathroom_1772916040233.mp4" autoPlay loop muted>
+                                Your browser does not support the video tag.
+                            </video>
                         </div>
                         <div className="item-meta">
                             <h3>Terracotta Monolith</h3>
@@ -40,7 +44,9 @@ export default function Exhibition() {
 
                     <div className="gallery-item reveals fade-in-up margin-huge">
                         <div className="aspect-portrait">
-                            <img src="/images/portfolio_office_1772916057766.png" alt="Executive Office Bronze Plaster" />
+                            <video src="/images/portfolio_office_1772916057766.mp4" autoPlay loop muted>
+                                Your browser does not support the video tag.
+                            </video>
                         </div>
                         <div className="item-meta">
                             <h3>Corporate Brutalism</h3>

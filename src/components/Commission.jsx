@@ -9,7 +9,7 @@ export default function Commission() {
                     <input type="text" placeholder="Name" required />
                     <input type="email" placeholder="Email" required />
                     <textarea placeholder="Project Details" rows="1" required></textarea>
-                    <button type="submit" className="brutal-btn">Transmit</button>
+                    <button type="submit" className="brutal-btn">Submit</button>
                 </form>
             </div>
         </section>

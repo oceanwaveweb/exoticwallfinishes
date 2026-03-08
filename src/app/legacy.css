@@ -348,7 +348,8 @@ body {
     overflow: hidden;
 }
 
-.image-block img {
+.image-block img,
+.image-block video {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -356,7 +357,8 @@ body {
     transition: filter 1s var(--ease), transform 1s var(--ease);
 }
 
-.image-block:hover img {
+.image-block:hover img,
+.image-block:hover video {
     filter: grayscale(0%);
     transform: scale(1.05);
 }
@@ -398,7 +400,8 @@ body {
     /* offset them to create zig-zag */
 }
 
-.gallery-item img {
+.gallery-item img,
+.gallery-item video {
     width: 100%;
     height: 100%;
     object-fit: cover;

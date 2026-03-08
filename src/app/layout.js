@@ -3,7 +3,7 @@ import './legacy.css'
 
 export const metadata = {
     title: 'G.C. | Exotic Architectural Surfaces',
-    description: 'Avant-garde bespoke Venetian plaster wall finishes by master artisan Gian Carlo.',
+    description: 'Avant-garde bespoke Venetian plaster wall finishes by master artisan Gian Carlo Sagasti.',
 }
 
 export default function RootLayout({ children }) {

@@ -6,8 +6,9 @@ export default function Footer() {
                     <span className="f-logo"><img src="/images/brand_logo.png" alt="G.C. Logo" className="brand-img-footer" /></span>
                 </div>
                 <div className="f-col right">
-                    <p>Kyoto / Marrakesh / Mexico City</p>
-                    <p>atelier@exoticwalls.ltd</p>
+                    <p>Miami Florida</p>
+                    <p>venetianman@live.com</p>
+                    <p>(305) 801-2581</p>
                 </div>
                 <div className="f-col center-full">
                     <div className="marquee">

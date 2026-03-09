@@ -6,11 +6,11 @@ export default function Atelier() {
                     <span className="overline">01 / The Artisan</span>
                     <h2 className="display-title">Gian Carlo<br />Sagasti</h2>
                     <p className="body-text">
-                        Originating from the old schools of Italia, Gian Carlo Sagasti shatters traditional boundaries.
-                        Merging authentic lime plasters with exotic crushed minerals, oxidized metals, and volcanic ash.
+                        Gian Carlo Sagasti’s passion for exotic wall design is built upon his past experience importing plaster across the United States and the artistry of application.
                     </p>
                     <p className="body-text">
-                        This is not decor. It is a tactile intervention in modern luxury.
+                        At Exotic Wall Finishes and Design, we appreciate the beauty of an artfully designed experience. Thoughtful interior design is a cornerstone piece of creating the perfect mood.<br /><br />
+                        Exotic Wall Finishes by Gian Carlo.
                     </p>
                 </div>
                 <div className="image-block reveals zoom-in delay-1">

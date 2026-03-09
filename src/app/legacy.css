@@ -805,7 +805,7 @@ footer {
         align-items: center;
         background-color: rgba(5, 5, 5, 0.95);
         backdrop-filter: blur(5px);
-        padding: 0 1rem;
+        padding: 0 0.5rem;
         border-top: 1px solid var(--line-color);
         mix-blend-mode: normal;
         /* Override difference blend mode on mobile */
@@ -814,12 +814,12 @@ footer {
     .side-nav-link {
         writing-mode: horizontal-tb;
         transform: rotate(0deg);
-        font-size: 0.75rem;
-        letter-spacing: 2px;
+        font-size: 0.65rem;
+        letter-spacing: 1px;
     }
 
     .side-nav-link:hover {
-        letter-spacing: 3px;
+        letter-spacing: 2px;
     }
 
     .footer-grid {

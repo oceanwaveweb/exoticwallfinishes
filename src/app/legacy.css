@@ -433,6 +433,7 @@ body {
 .image-block video.static-color {
     filter: none !important;
     transition: none !important;
+    object-fit: contain !important;
 }
 
 .image-block:hover img.static-color,

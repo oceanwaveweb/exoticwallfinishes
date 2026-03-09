@@ -790,6 +790,15 @@ footer {
         padding-right: 0;
     }
 
+    .commission,
+    .atelier {
+        padding: 6rem 0;
+    }
+
+    .minimal-form {
+        margin-top: 2rem;
+    }
+
     .navbar {
         padding: 1rem 1.5rem;
     }
@@ -838,6 +847,7 @@ footer {
         grid-template-columns: 1fr;
         gap: 3rem;
         text-align: center;
+        padding-bottom: 2rem;
     }
 
     .f-col.right {

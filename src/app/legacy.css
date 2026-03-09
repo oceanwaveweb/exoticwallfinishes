@@ -678,6 +678,21 @@ footer {
 }
 
 @media (max-width: 768px) {
+
+    .container,
+    .sticky-container {
+        max-width: 100%;
+        padding: 0 1.5rem;
+    }
+
+    .hero {
+        padding: 0 1.5rem;
+    }
+
+    .exhibition-title-area {
+        padding-right: 0;
+    }
+
     .navbar {
         padding: 1rem 1.5rem;
     }

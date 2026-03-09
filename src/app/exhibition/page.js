@@ -40,31 +40,46 @@ export default function ExhibitionPage() {
                 </div>
             </section>
 
-            {/* --- 2. Venetian Plaster History Graphic --- */}
-            <section className="material-history dark-section" id="venetian-plaster">
-                <div className="container" style={{ padding: '10rem 0' }}>
-                    <div className="history-header reveals fade-in-up">
-                        <span className="overline">The Legacy</span>
-                        <h2 className="display-title outline-text" style={{ fontSize: '4rem', marginBottom: '4rem' }}>VENETIAN<br />PLASTER</h2>
+            {/* --- 2. Avant-Garde Venetian Plaster Experience --- */}
+            <section className="venetian-immersive" id="venetian-plaster">
+                <div className="venetian-parallax-bg"></div>
+
+                <div className="giant-bleed-text">AURA OF VENICE</div>
+
+                <div className="container immersive-container">
+                    <div className="immersive-header reveals fade-in-up">
+                        <span className="overline">Master Material</span>
+                        <h2 className="display-title outline-text" style={{ fontSize: '5rem', marginBottom: '2rem' }}>VENETIAN<br />PLASTER</h2>
+                        <p className="body-text" style={{ maxWidth: '600px', fontSize: '1.2rem', lineHeight: '1.8' }}>
+                            A living architectural dimension. Not merely a paint, but a monolithic surface that chemically reverts back into solid limestone on your walls.
+                        </p>
                     </div>
 
-                    <div className="history-graphic">
-                        <div className="history-node reveals slide-in-left delay-1">
-                            <div className="node-number">01</div>
-                            <h3 className="node-title">Ancient Rome</h3>
-                            <p className="node-text">The technique was originally discovered as a method to replicate the sheer opulence of solid marble architecture without the overwhelming weight.</p>
+                    <div className="immersive-overlap-grid">
+                        <div className="overlap-image reveals fade-in-up delay-1">
+                            <img src="/images/hero_plaster_wall_1772909184023.png" alt="Raw Venetian Plaster Wall" className="static-color" />
                         </div>
 
-                        <div className="history-node reveals slide-in-left">
-                            <div className="node-number">02</div>
-                            <h3 className="node-title">The Renaissance</h3>
-                            <p className="node-text">Perfected in Venice during the 15th century, artisans mixed lime putty with marble dust from nearby quarries to craft stunning, water-resistant palazzo walls.</p>
+                        <div className="overlap-card card-1 reveals slide-in-left">
+                            <span className="card-num">01</span>
+                            <h3>Ancient Rome</h3>
+                            <p>Discovered as a means to replicate the sheer opulence of solid marble without the crushing architectural weight.</p>
                         </div>
 
-                        <div className="history-node reveals slide-in-left delay-1">
-                            <div className="node-number">03</div>
-                            <h3 className="node-title">Chemical Rebirth</h3>
-                            <p className="node-text">As the plaster cures on the wall, it absorbs carbon dioxide from the air—literally turning back into monolithic limestone over time.</p>
+                        <div className="overlap-image-trowel reveals fade-in-up delay-1">
+                            <img src="/images/artisan_trowel_1772909203882.png" alt="Artisan Plaster Trowel" className="static-color" />
+                        </div>
+
+                        <div className="overlap-card card-2 reveals slide-in-left delay-1">
+                            <span className="card-num">02</span>
+                            <h3>The Renaissance</h3>
+                            <p>Perfected in Venice during the 15th century. Artisans mixed lime putty with fine marble dust to craft breathtaking, water-resistant palazzo interiors.</p>
+                        </div>
+
+                        <div className="overlap-card card-3 reveals slide-in-left delay-2">
+                            <span className="card-num">03</span>
+                            <h3>Chemical Rebirth</h3>
+                            <p>As the wet plaster cures, it absorbs carbon dioxide from the atmosphere—literally crystallizing back into a solid stone facade.</p>
                         </div>
                     </div>
                 </div>

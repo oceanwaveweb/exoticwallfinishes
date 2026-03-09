@@ -743,6 +743,11 @@ footer {
         margin-top: 3rem;
     }
 
+    .item-meta {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
     .text-block,
     .image-block {
         width: 100%;

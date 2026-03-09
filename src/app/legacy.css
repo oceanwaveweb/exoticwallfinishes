@@ -32,6 +32,10 @@ html {
 
 body {
     background-color: var(--bg-dark);
+    background-image:
+        radial-gradient(circle at 15% 50%, rgba(212, 175, 55, 0.03), transparent 25%),
+        radial-gradient(circle at 85% 30%, rgba(212, 175, 55, 0.04), transparent 25%);
+    background-attachment: fixed;
     color: var(--text-light);
     font-family: var(--font-sans);
     line-height: 1.6;

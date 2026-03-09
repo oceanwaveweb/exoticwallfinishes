@@ -930,6 +930,8 @@ footer {
     line-height: 0.8;
     margin-bottom: 0;
     margin-left: -1rem;
+    padding-right: 0.2em;
+    /* Fixes WebKit background-clip italic cutoff */
     background: linear-gradient(135deg, #fff 0%, var(--accent-gold) 100%);
     -webkit-background-clip: text;
     background-clip: text;

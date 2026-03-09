@@ -85,25 +85,30 @@ export default function ExhibitionPage() {
                 </div>
             </section>
 
-            {/* --- 3. Glowing Marmorino Vault --- */}
-            <section className="marmorino-vault dark-section" id="marmorino">
-                <div className="container layout-offset" style={{ alignItems: 'center' }}>
-                    <div className="text-block reveals slide-in-left" style={{ width: '45%' }}>
-                        <span className="overline glow-text">Material Study</span>
-                        <h2 className="display-title gold-gradient-text" style={{ fontSize: '4rem', marginBottom: '2rem' }}>MARMORINO</h2>
-                        <p className="body-text" style={{ fontSize: '1.25rem', lineHeight: '1.8', color: 'var(--text-light)' }}>
-                            Where traditional Venetian Plaster is polished to a glass-like sheen, Marmorino demands a brutalist gravitas. Characterized by its unpolished, rugged face, it forces light to scatter across deeply tactile white aggregate.
-                        </p>
-                        <p className="body-text" style={{ fontSize: '1.1rem', lineHeight: '1.7', marginTop: '1.5rem' }}>
-                            Interlaced here with raw, liquid gold veins, this texture transcends architecture to become a monolithic piece of fine art. The matte surface absorbs ambient room light, while the metallic veins ignite with a radioactive, museum-quality glow against dark aesthetics.
-                        </p>
-                    </div>
+            {/* --- 3. Broken Grid Marmorino Architecture --- */}
+            <section className="marmorino-broken-grid dark-section" id="marmorino">
+                <div className="broken-grid-container">
 
-                    <div className="image-block reveals fade-in-up delay-1" style={{ width: '50%' }}>
-                        <div className="gold-glow-monolith">
-                            <img src="/images/marmorino_gold_texture.png" alt="Raw White and Gold Vein Marmorino Texture" className="static-color" />
+                    <div className="broken-grid-image reveals fade-in-up delay-1">
+                        <div className="gold-glow-monolith portrait-monolith">
+                            <img src="/images/generated_marmorino_gold.png" alt="AI Generated Brutalist Marmorino Gold Vein Texture" className="static-color" />
                         </div>
                     </div>
+
+                    <div className="broken-grid-content reveals slide-in-left">
+                        <span className="overline glow-text" style={{ marginLeft: '2rem' }}>Material Study</span>
+                        <h2 className="display-title escaped-title">MARMORINO</h2>
+
+                        <div className="glass-text-card">
+                            <p className="body-text" style={{ fontSize: '1.25rem', lineHeight: '1.8', color: 'var(--text-light)' }}>
+                                Where traditional Venetian Plaster is polished to a glass-like sheen, Marmorino demands a brutalist gravitas. Characterized by its unpolished, rugged face, it forces light to scatter across deeply tactile white aggregate.
+                            </p>
+                            <p className="body-text" style={{ fontSize: '1.1rem', lineHeight: '1.7', marginTop: '1.5rem' }}>
+                                Interlaced here with raw, liquid gold veins, this texture transcends architecture to become a monolithic piece of fine art. The matte surface absorbs ambient room light, while the metallic veins ignite with a radioactive glow against dark aesthetics.
+                            </p>
+                        </div>
+                    </div>
+
                 </div>
             </section>
 

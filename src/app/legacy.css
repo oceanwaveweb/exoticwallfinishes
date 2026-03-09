@@ -888,12 +888,97 @@ footer {
     }
 }
 
-/* --- Glowing Marmorino Vault --- */
-.marmorino-vault {
-    padding: 12rem 0;
+/* --- Broken Grid Marmorino Architecture --- */
+.marmorino-broken-grid {
+    padding: 15rem 0;
     position: relative;
     overflow: hidden;
-    background: radial-gradient(circle at center right, rgba(230, 204, 159, 0.03) 0%, #020202 60%);
+    background-color: var(--bg-dark);
+}
+
+.broken-grid-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 5vw;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    align-items: center;
+}
+
+.broken-grid-image {
+    grid-column: 5 / 13;
+    grid-row: 1;
+    z-index: 1;
+}
+
+.portrait-monolith {
+    aspect-ratio: 4/5;
+    height: 120vh;
+    max-height: 1000px;
+    width: 100%;
+}
+
+.broken-grid-content {
+    grid-column: 1 / 8;
+    grid-row: 1;
+    z-index: 2;
+    transform: translateY(10rem);
+}
+
+.escaped-title {
+    font-size: 8rem;
+    line-height: 0.8;
+    margin-bottom: 0;
+    margin-left: -5rem;
+    background: linear-gradient(135deg, #fff 0%, var(--accent-gold) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 30px rgba(230, 204, 159, 0.1);
+    position: relative;
+    z-index: 3;
+}
+
+.glass-text-card {
+    background: rgba(10, 10, 10, 0.65);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-top: 1px solid rgba(230, 204, 159, 0.3);
+    padding: 4rem;
+    margin-top: -2rem;
+    position: relative;
+    z-index: 2;
+}
+
+@media (max-width: 1024px) {
+    .broken-grid-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .broken-grid-image {
+        width: 100%;
+        margin-bottom: -15rem;
+    }
+
+    .portrait-monolith {
+        aspect-ratio: 3/4;
+        height: auto;
+    }
+
+    .broken-grid-content {
+        transform: none;
+        width: 100%;
+    }
+
+    .escaped-title {
+        font-size: 4rem;
+        margin-left: 0;
+    }
+
+    .glass-text-card {
+        padding: 2rem;
+    }
 }
 
 .gold-glow-monolith {

@@ -888,6 +888,65 @@ footer {
     }
 }
 
+/* --- Glowing Marmorino Vault --- */
+.marmorino-vault {
+    padding: 12rem 0;
+    position: relative;
+    overflow: hidden;
+    background: radial-gradient(circle at center right, rgba(230, 204, 159, 0.03) 0%, #020202 60%);
+}
+
+.gold-glow-monolith {
+    aspect-ratio: 3/4;
+    width: 90%;
+    margin-left: auto;
+    position: relative;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow:
+        0 0 40px rgba(230, 204, 159, 0.1),
+        0 0 100px rgba(230, 204, 159, 0.08),
+        0 0 200px rgba(230, 204, 159, 0.05),
+        -20px 0 150px rgba(230, 204, 159, 0.03);
+    border: 1px solid rgba(230, 204, 159, 0.2);
+    transition: transform 0.6s var(--ease), box-shadow 0.6s var(--ease);
+}
+
+.gold-glow-monolith:hover {
+    transform: translateY(-10px);
+    box-shadow:
+        0 10px 50px rgba(230, 204, 159, 0.2),
+        0 0 120px rgba(230, 204, 159, 0.15),
+        0 0 250px rgba(230, 204, 159, 0.1);
+}
+
+.gold-glow-monolith img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: contrast(1.1) saturate(1.2);
+}
+
+.glow-text {
+    text-shadow: 0 0 10px rgba(230, 204, 159, 0.2);
+}
+
+.gold-gradient-text {
+    background: linear-gradient(135deg, #fff 0%, var(--accent-gold) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 30px rgba(230, 204, 159, 0.1);
+}
+
+@media (max-width: 1024px) {
+    .gold-glow-monolith {
+        width: 100%;
+        margin-top: 4rem;
+        aspect-ratio: 4/5;
+    }
+}
+
 /* --- Animations --- */
 .reveals {
     opacity: 0;

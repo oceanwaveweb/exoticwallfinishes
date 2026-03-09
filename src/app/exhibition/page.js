@@ -85,19 +85,23 @@ export default function ExhibitionPage() {
                 </div>
             </section>
 
-            {/* --- 3. Marmorino Texture Study --- */}
-            <section className="material-texture" style={{ padding: '10rem 0' }} id="marmorino">
+            {/* --- 3. Glowing Marmorino Vault --- */}
+            <section className="marmorino-vault dark-section" id="marmorino">
                 <div className="container layout-offset" style={{ alignItems: 'center' }}>
-                    <div className="text-block reveals fade-in-up" style={{ width: '40%' }}>
-                        <span className="overline">Material Study</span>
-                        <h2 className="display-title" style={{ fontSize: '3.5rem', marginBottom: '2rem' }}>MARMORINO</h2>
-                        <p className="body-text" style={{ fontSize: '1.2rem', lineHeight: '1.8' }}>
-                            Characterized by its raw, unpolished face and coarser marble aggregate, Marmorino absorbs light rather than reflecting it. This creates soft, atmospheric shadows and a deeply tactile matte finish that anchors large spaces with profound, brutalist gravitas.
+                    <div className="text-block reveals slide-in-left" style={{ width: '45%' }}>
+                        <span className="overline glow-text">Material Study</span>
+                        <h2 className="display-title gold-gradient-text" style={{ fontSize: '4rem', marginBottom: '2rem' }}>MARMORINO</h2>
+                        <p className="body-text" style={{ fontSize: '1.25rem', lineHeight: '1.8', color: 'var(--text-light)' }}>
+                            Where traditional Venetian Plaster is polished to a glass-like sheen, Marmorino demands a brutalist gravitas. Characterized by its unpolished, rugged face, it forces light to scatter across deeply tactile white aggregate.
+                        </p>
+                        <p className="body-text" style={{ fontSize: '1.1rem', lineHeight: '1.7', marginTop: '1.5rem' }}>
+                            Interlaced here with raw, liquid gold veins, this texture transcends architecture to become a monolithic piece of fine art. The matte surface absorbs ambient room light, while the metallic veins ignite with a radioactive, museum-quality glow against dark aesthetics.
                         </p>
                     </div>
-                    <div className="image-block reveals fade-in-up delay-1" style={{ width: '55%' }}>
-                        <div className="aspect-landscape" style={{ border: '1px solid var(--accent-gold)' }}>
-                            <img src="/images/marmorino_texture_bg.jpg" alt="Rich Marmorino wall texture" className="static-color" style={{ filter: 'contrast(1.2)' }} />
+
+                    <div className="image-block reveals fade-in-up delay-1" style={{ width: '50%' }}>
+                        <div className="gold-glow-monolith">
+                            <img src="/images/marmorino_gold_texture.png" alt="Raw White and Gold Vein Marmorino Texture" className="static-color" />
                         </div>
                     </div>
                 </div>

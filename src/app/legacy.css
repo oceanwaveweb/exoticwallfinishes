@@ -429,6 +429,17 @@ body {
     transform: scale(1.05);
 }
 
+.image-block img.static-color,
+.image-block video.static-color {
+    filter: none !important;
+    transition: none !important;
+}
+
+.image-block:hover img.static-color,
+.image-block:hover video.static-color {
+    transform: none !important;
+}
+
 /* --- Exhibition (Sticky Scrolling) --- */
 .exhibition {
     padding: 10rem 0;

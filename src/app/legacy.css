@@ -738,9 +738,13 @@ footer {
         padding: 0;
     }
 
+    .gallery-item {
+        margin-bottom: 4rem;
+    }
+
     .margin-huge {
         margin-left: 0;
-        margin-top: 3rem;
+        margin-top: 0;
     }
 
     .item-meta {

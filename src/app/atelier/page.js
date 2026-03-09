@@ -87,7 +87,7 @@ export default function AtelierPage() {
                     <div className="image-block">
                         <div className="aspect-square">
                             {/* Placeholder for future tools/brand image */}
-                            <img src="/images/hero_plaster_wall_1772909184023.png" alt="Marmorino Tools Heritage" />
+                            <img src="/images/marmorino_tools.png" alt="Marmorino Tools Heritage" />
                         </div>
                     </div>
                 </div>

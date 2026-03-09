@@ -1,14 +1,14 @@
 import Navbar from '@/components/Navbar'
-import Hero from '@/components/Hero'
+import Exhibition from '@/components/Exhibition'
 import Footer from '@/components/Footer'
 import ClientEffects from '@/components/ClientEffects'
 
-export default function Home() {
+export default function ExhibitionPage() {
     return (
         <main>
             <ClientEffects />
             <Navbar />
-            <Hero />
+            <Exhibition />
             <Footer />
         </main>
     )

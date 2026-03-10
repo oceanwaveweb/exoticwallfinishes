@@ -1020,8 +1020,9 @@ footer {
 
     .broken-grid-content {
         transform: none;
-        width: 100%;
+        width: 120%; /* Expanded from 100% to prevent giant italic typography from clipping */
         position: relative;
+        overflow: visible; /* Ensure the text can safely bleed outside the container on mobile */
     }
     
     .broken-grid-content::before {

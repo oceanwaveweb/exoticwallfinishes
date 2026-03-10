@@ -1005,7 +1005,7 @@ footer {
         margin-left: 0;
         padding-right: 0.5em;
         text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8); /* Extra dark drop shadow for mobile legibility */
-        filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.2));
+        filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.45)); /* White glow for contrast */
     }
 
     .glass-text-card {

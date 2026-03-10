@@ -1060,9 +1060,8 @@ footer {
         -webkit-text-fill-color: transparent;
         /* Replaced drop-shadow filter with heavy multi-layer text-shadow because iOS Webkit drops filters on background-clip */
         text-shadow: 
-            0 0 10px rgba(255, 255, 255, 0.6),
-            0 0 20px rgba(255, 255, 255, 0.4),
-            0 0 30px rgba(255, 255, 255, 0.2),
+            0 0 6px rgba(255, 255, 255, 0.3),
+            0 0 12px rgba(255, 255, 255, 0.15),
             0 4px 20px rgba(0, 0, 0, 0.8); /* Keep the dark legibility drop shadow at the bottom of the stack */
     }
 

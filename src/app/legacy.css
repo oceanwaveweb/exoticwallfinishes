@@ -944,6 +944,7 @@ footer {
     text-shadow: 0 0 30px rgba(230, 204, 159, 0.1);
     position: relative;
     z-index: 3;
+    white-space: nowrap; /* Prevent MARMORINO from breaking to a second line */
 }
 
 .glass-text-card {

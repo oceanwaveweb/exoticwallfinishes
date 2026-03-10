@@ -924,6 +924,8 @@ footer {
     grid-row: 1;
     z-index: 2;
     transform: translateY(10rem);
+    width: 120%; /* Allow content to bleed past standard grid bounds */
+    overflow: visible;
 }
 
 .escaped-title {

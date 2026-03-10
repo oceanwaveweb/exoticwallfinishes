@@ -1020,7 +1020,7 @@ footer {
 
     .broken-grid-content {
         transform: none;
-        width: 120%; /* Expanded from 100% to prevent giant italic typography from clipping */
+        width: 100%; /* Reset to 100% to stop the container from overflowing the screen to the left */
         position: relative;
         overflow: visible; /* Ensure the text can safely bleed outside the container on mobile */
     }
@@ -1049,9 +1049,9 @@ footer {
     }
 
     .escaped-title {
-        font-size: clamp(3.5rem, 16vw, 5.8rem); /* Massively scale up font to fill horizontal width */
+        font-size: clamp(3rem, 13vw, 4.8rem); /* Perfectly scaled to span 90vw mobile container width without overflow */
         margin-left: 0;
-        padding-right: 0.5em; /* Extreme safety buffer for italic WebKit cutoff on tiny screens */
+        padding-right: 0.2em; /* Reduced safety buffer to recover horizontal space */
         /* Replaced drop-shadow filter with heavy multi-layer text-shadow because iOS Webkit drops filters on background-clip */
         text-shadow: 
             0 0 10px rgba(255, 255, 255, 0.6),

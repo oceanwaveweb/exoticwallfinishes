@@ -97,7 +97,7 @@ export default function ExhibitionPage() {
 
                     <div className="broken-grid-content reveals slide-in-left">
                         <span className="overline glow-text" style={{ marginLeft: '2rem' }}>Material Study</span>
-                        <h2 className="display-title escaped-title">MARMORINO</h2>
+                        <h2 className="display-title escaped-title">MARMORINO&nbsp;&nbsp;</h2>
 
                         <div className="glass-text-card">
                             <p className="body-text" style={{ fontSize: '1.25rem', lineHeight: '1.8', color: 'var(--text-light)' }}>

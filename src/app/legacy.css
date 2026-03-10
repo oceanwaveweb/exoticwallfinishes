@@ -940,6 +940,7 @@ footer {
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
+    -webkit-filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.45));
     filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.45)); /* Thin white glow for contrast */
     text-shadow: 0 0 30px rgba(230, 204, 159, 0.1);
     position: relative;
@@ -1036,8 +1037,9 @@ footer {
     .escaped-title {
         font-size: clamp(2.5rem, 11vw, 4rem);
         margin-left: 0;
-        padding-right: 0.5em;
+        padding-right: 0.5em; /* Extreme safety buffer for italic WebKit cutoff on tiny screens */
         text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8); /* Extra dark drop shadow for mobile legibility */
+        -webkit-filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.45));
         filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.45)); /* White glow for contrast */
     }
 

@@ -933,7 +933,7 @@ footer {
     margin-bottom: -0.3em;
     /* Visually offset the taller line height */
     margin-left: -1rem;
-    padding: 0.2em 0.2em 0.1em 0;
+    padding: 0.2em 0.5em 0.1em 0;
     /* Expands bounding box for WebKit background-clip */
     /* Fixes WebKit background-clip italic cutoff */
     background: linear-gradient(135deg, #fff 0%, var(--accent-gold) 100%);

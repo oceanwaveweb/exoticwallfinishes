@@ -197,11 +197,12 @@ body {
 
 .display-title {
     font-family: var(--font-serif);
-    font-size: clamp(3rem, 7vw, 6rem);
+    font-size: clamp(2.5rem, 10vw, 6rem); /* Reduced minimum from 3rem to 2.5rem to prevent overflow on long words like PORTFOLIO */
     line-height: 0.9;
     font-style: italic;
     color: var(--text-light);
     margin-bottom: 2rem;
+    word-break: break-word; /* Ensure long single words can wrap if absolutely necessary */
 }
 
 .outline-text {

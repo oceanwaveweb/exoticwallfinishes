@@ -1038,9 +1038,12 @@ footer {
         font-size: clamp(2.5rem, 11vw, 4rem);
         margin-left: 0;
         padding-right: 0.5em; /* Extreme safety buffer for italic WebKit cutoff on tiny screens */
-        text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8); /* Extra dark drop shadow for mobile legibility */
-        -webkit-filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.45));
-        filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.45)); /* White glow for contrast */
+        /* Replaced drop-shadow filter with heavy multi-layer text-shadow because iOS Webkit drops filters on background-clip */
+        text-shadow: 
+            0 0 10px rgba(255, 255, 255, 0.6),
+            0 0 20px rgba(255, 255, 255, 0.4),
+            0 0 30px rgba(255, 255, 255, 0.2),
+            0 4px 20px rgba(0, 0, 0, 0.8); /* Keep the dark legibility drop shadow at the bottom of the stack */
     }
 
     .glass-text-card {

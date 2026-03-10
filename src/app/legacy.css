@@ -1048,7 +1048,7 @@ footer {
     }
 
     .escaped-title {
-        font-size: clamp(2.5rem, 11vw, 4rem);
+        font-size: clamp(3.5rem, 16vw, 5.8rem); /* Massively scale up font to fill horizontal width */
         margin-left: 0;
         padding-right: 0.5em; /* Extreme safety buffer for italic WebKit cutoff on tiny screens */
         /* Replaced drop-shadow filter with heavy multi-layer text-shadow because iOS Webkit drops filters on background-clip */

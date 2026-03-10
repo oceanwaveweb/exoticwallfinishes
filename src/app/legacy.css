@@ -947,12 +947,21 @@ footer {
 .glass-text-card {
     background: rgba(10, 10, 10, 0.65);
     backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     border-top: 1px solid rgba(230, 204, 159, 0.3);
     /* Keep top accent line */
     padding: 4rem;
     margin-top: -2rem;
     position: relative;
     z-index: 2;
+    
+    /* Hardware acceleration fix for WebKit backdrop-filter flicker */
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    perspective: 1000;
+    -webkit-perspective: 1000;
 }
 
 @media (max-width: 1024px) {

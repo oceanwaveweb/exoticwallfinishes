@@ -994,35 +994,23 @@ footer {
     margin-left: auto;
     position: relative;
     border-radius: 4px;
+    /* Removed pseudo-element to stop flickering, recreating intense bottom glow with box-shadow alone */
     box-shadow:
-        0 20px 80px rgba(212, 175, 55, 0.2),
-        0 50px 150px rgba(212, 175, 55, 0.15),
-        0 0 300px rgba(212, 175, 55, 0.1),
-        -20px 40px 200px rgba(212, 175, 55, 0.08);
+        0 40px 100px rgba(212, 175, 55, 0.4),
+        0 80px 180px rgba(212, 175, 55, 0.25),
+        0 100px 300px rgba(212, 175, 55, 0.15),
+        -20px 40px 200px rgba(212, 175, 55, 0.1);
     border: 1px solid rgba(230, 204, 159, 0.2);
     transition: transform 0.6s var(--ease), box-shadow 0.6s var(--ease);
-}
-
-.gold-glow-monolith::before {
-    content: '';
-    position: absolute;
-    bottom: -20px;
-    left: 10%;
-    width: 80%;
-    height: 100px;
-    background: radial-gradient(ellipse at center, rgba(212, 175, 55, 0.5) 0%, transparent 70%);
-    filter: blur(30px);
-    z-index: -1;
-    pointer-events: none;
 }
 
 .gold-glow-monolith:hover {
     transform: translateY(-10px);
     box-shadow:
-        0 30px 100px rgba(212, 175, 55, 0.3),
-        0 80px 200px rgba(212, 175, 55, 0.2),
-        0 0 400px rgba(212, 175, 55, 0.15),
-        -30px 60px 250px rgba(212, 175, 55, 0.1);
+        0 60px 150px rgba(212, 175, 55, 0.5),
+        0 100px 250px rgba(212, 175, 55, 0.3),
+        0 150px 450px rgba(212, 175, 55, 0.2),
+        -30px 60px 250px rgba(212, 175, 55, 0.15);
 }
 
 .gold-glow-monolith img {

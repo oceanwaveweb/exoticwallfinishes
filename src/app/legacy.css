@@ -967,6 +967,38 @@ footer {
     -webkit-perspective: 1000;
 }
 
+/* Material Specs Grid */
+.material-specs-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin: 2.5rem 0;
+    padding: 1.5rem 0;
+    border-top: 1px solid rgba(230, 204, 159, 0.2);
+    border-bottom: 1px solid rgba(230, 204, 159, 0.2);
+}
+
+.spec-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.spec-label {
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--accent-gold);
+    margin-bottom: 0.5rem;
+}
+
+.spec-value {
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+    color: var(--text-light);
+    line-height: 1.4;
+}
+
 @media (max-width: 1024px) {
     .broken-grid-container {
         display: flex;
@@ -1011,6 +1043,13 @@ footer {
 
     .glass-text-card {
         padding: 2rem;
+    }
+
+    .material-specs-grid {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+        padding: 1rem 0;
+        margin: 1.5rem 0;
     }
 }
 

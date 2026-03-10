@@ -100,11 +100,27 @@ export default function ExhibitionPage() {
                         <h2 className="display-title escaped-title">MARMORINO&nbsp;&nbsp;</h2>
 
                         <div className="glass-text-card">
-                            <p className="body-text" style={{ fontSize: '1.25rem', lineHeight: '1.8', color: 'var(--text-light)' }}>
+                            <p className="body-text" style={{ fontSize: '1.25rem', lineHeight: '1.8', color: 'var(--text-light)', marginBottom: '2.5rem' }}>
                                 Where traditional Venetian Plaster is polished to a glass-like sheen, Marmorino demands a brutalist gravitas. Characterized by its unpolished, rugged face, it forces light to scatter across deeply tactile white aggregate.
                             </p>
-                            <p className="body-text" style={{ fontSize: '1.1rem', lineHeight: '1.7', marginTop: '1.5rem' }}>
-                                Interlaced here with raw, liquid gold veins, this texture transcends architecture to become a monolithic piece of fine art. The matte surface absorbs ambient room light, while the metallic veins ignite with a radioactive glow against dark aesthetics.
+                            
+                            <div className="material-specs-grid">
+                                <div className="spec-item">
+                                    <span className="spec-label">Base</span>
+                                    <span className="spec-value">Slaked Lime & Marble</span>
+                                </div>
+                                <div className="spec-item">
+                                    <span className="spec-label">Texture</span>
+                                    <span className="spec-value">Brutalist / Tactile</span>
+                                </div>
+                                <div className="spec-item">
+                                    <span className="spec-label">Finish</span>
+                                    <span className="spec-value">Matte with Gold Veins</span>
+                                </div>
+                            </div>
+
+                            <p className="body-text" style={{ fontSize: '1.05rem', lineHeight: '1.6', color: 'var(--text-muted)', marginTop: '2.5rem', borderLeft: '2px solid var(--accent-gold)', paddingLeft: '1rem', fontStyle: 'italic' }}>
+                                The matter absorbs ambient room light, while the metallic veins ignite with a radiant glow against dark aesthetics, transcending architecture to become a monolithic piece of fine art.
                             </p>
                         </div>
                     </div>

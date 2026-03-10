@@ -49,7 +49,7 @@ export default function ExhibitionPage() {
                 <div className="container immersive-container">
                     <div className="immersive-header reveals fade-in-up">
                         <span className="overline">Master Material</span>
-                        <h2 className="display-title outline-text" style={{ fontSize: 'clamp(2.5rem, 10vw, 5rem)', marginBottom: '2rem' }}>VENETIAN<br />PLASTER</h2>
+                        <h2 className="display-title textured-plaster-title" style={{ fontSize: 'clamp(3rem, 11vw, 6rem)', marginBottom: '2rem' }}>VENETIAN<br />PLASTER</h2>
                         <p className="body-text" style={{ maxWidth: '600px', fontSize: '1.2rem', lineHeight: '1.8' }}>
                             A living architectural dimension. Not merely a paint, but a monolithic surface that chemically reverts back into solid limestone on your walls.
                         </p>

@@ -215,6 +215,20 @@ body {
     font-weight: 700;
 }
 
+.textured-plaster-title {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-style: normal;
+    background-image: url('/images/venetian_plaster_wall.png');
+    background-size: cover;
+    background-position: center;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    filter: drop-shadow(0 15px 35px rgba(0, 0, 0, 0.8)); /* Deep shadow for 3D presence */
+}
+
 .full-width-title {
     display: flex;
     flex-direction: column;

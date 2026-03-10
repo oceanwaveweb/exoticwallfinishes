@@ -3,7 +3,10 @@ export default function Footer() {
         <footer>
             <div className="container footer-grid">
                 <div className="f-col">
-                    <span className="f-logo"><img src="/images/brand_logo.png" alt="G.C. Logo" className="brand-img-footer" /></span>
+                    <div className="logo-pair">
+                        <img src="/images/brand_logo.png" alt="G.C. Logo" className="brand-img-footer" />
+                        <img src="/images/marmorino_tools.png" alt="Marmorino Tools Logo" className="parent-logo-footer" />
+                    </div>
                 </div>
                 <div className="f-col right">
                     <p>Miami Florida</p>

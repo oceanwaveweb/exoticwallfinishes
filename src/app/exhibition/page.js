@@ -15,6 +15,7 @@ export default function ExhibitionPage() {
                     <h1 className="display-title outline-text" style={{ marginBottom: '5rem' }}>PORTFOLIO</h1>
 
                     <div className="masonry-grid reveals fade-in-up">
+                        {/* Original Items */}
                         <div className="masonry-item item-large">
                             <img src="/images/hero_plaster_wall_1772909184023.png" alt="Anthracite Gold Vein Project" />
                             <div className="picture-meta">
@@ -35,6 +36,51 @@ export default function ExhibitionPage() {
                                 <h3>Terracotta Monolith</h3>
                                 <span>Seamless Waterproof Tadelakt</span>
                             </div>
+                        </div>
+
+                        {/* New Expansion Items */}
+                        <div className="masonry-item item-portrait">
+                            <img src="/images/portfolio_concrete_tadelakt.png" alt="Charcoal Tadelakt Project" />
+                            <div className="picture-meta">
+                                <h3>Satin Monolith</h3>
+                                <span>Deep Charcoal Tadelakt</span>
+                            </div>
+                        </div>
+                        <div className="masonry-item item-square">
+                            <img src="/images/portfolio_ivory_limestone.png" alt="Ivory Limestone Project" />
+                            <div className="picture-meta">
+                                <h3>Ivory Curve</h3>
+                                <span>Smooth Limestone Plaster</span>
+                            </div>
+                        </div>
+                        <div className="masonry-item item-large">
+                            <video src="/images/portfolio_office_1772916057766.mp4" autoPlay loop muted playsInline></video>
+                            <div className="picture-meta">
+                                <h3>Architectural Flow</h3>
+                                <span>Seamless Surface Motion</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* --- Instagram Section --- */}
+            <section className="instagram-section reveals fade-in-up">
+                <div className="container">
+                    <div className="ig-header">
+                        <span className="overline">Social Presence</span>
+                        <h2 className="display-title">ON THE FEED</h2>
+                        <a href="https://www.instagram.com/exoticwallfinishes/" target="_blank" rel="noopener noreferrer" className="ig-link">
+                            @EXOTICWALLFINISHES
+                        </a>
+                    </div>
+                    <div className="ig-grid">
+                        <div className="ig-track">
+                            <div className="ig-item"><img src="/images/hero_plaster_wall_1772909184023.png" alt="Instagram Post" /></div>
+                            <div className="ig-item"><img src="/images/venetian_plaster_wall.png" alt="Instagram Post" /></div>
+                            <div className="ig-item"><img src="/images/marmorino_gold_texture.png" alt="Instagram Post" /></div>
+                            <div className="ig-item"><img src="/images/portfolio_concrete_tadelakt.png" alt="Instagram Post" /></div>
+                            <div className="ig-item"><img src="/images/portfolio_ivory_limestone.png" alt="Instagram Post" /></div>
                         </div>
                     </div>
                 </div>

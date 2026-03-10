@@ -939,6 +939,7 @@ footer {
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.45)); /* Thin white glow for contrast */
     text-shadow: 0 0 30px rgba(230, 204, 159, 0.1);
     position: relative;
     z-index: 3;

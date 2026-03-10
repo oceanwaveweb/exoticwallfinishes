@@ -931,6 +931,7 @@ footer {
 .escaped-title {
     font-size: clamp(4rem, 7vw, 7.5rem);
     line-height: 1.1;
+    font-weight: 900; /* Bolder font weight for the title */
     /* Increased from 0.8 to prevent top/bottom clipping */
     margin-bottom: -0.3em;
     /* Visually offset the taller line height */

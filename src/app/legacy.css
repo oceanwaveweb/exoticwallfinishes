@@ -217,6 +217,10 @@ body {
 
 .textured-plaster-title {
     font-family: var(--font-display);
+    font-size: clamp(4rem, 15vw, 9rem);
+    line-height: 0.85;
+    letter-spacing: -0.02em;
+    margin-bottom: 2rem;
     font-weight: 700;
     font-style: normal;
     background-image: url('/images/venetian_plaster_wall.png');
@@ -1077,6 +1081,12 @@ footer {
             0 0 6px rgba(255, 255, 255, 0.3),
             0 0 12px rgba(255, 255, 255, 0.15),
             0 4px 20px rgba(0, 0, 0, 0.8); /* Keep the dark legibility drop shadow at the bottom of the stack */
+    }
+
+    .textured-plaster-title {
+        font-size: clamp(2.5rem, 12vw, 4.5rem); /* Hard math restriction to prevent 8-character "VENETIAN" from overflowing screen edge */
+        line-height: 0.9;
+        word-break: break-word; /* Ensure wrapping as absolute fail-safe */
     }
 
     .glass-text-card {

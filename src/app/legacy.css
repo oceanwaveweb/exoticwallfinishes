@@ -1053,6 +1053,11 @@ footer {
         font-size: clamp(3rem, 13vw, 4.8rem); /* Perfectly scaled to span 90vw mobile container width without overflow */
         margin-left: 0;
         padding-right: 0.2em; /* Reduced safety buffer to recover horizontal space */
+        /* Override gradient to be strictly horizontal and pull the deep orange inwards for mobile readability */
+        background: linear-gradient(90deg, #fff 0%, var(--accent-gold) 40%, #d48a1b 95%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
         /* Replaced drop-shadow filter with heavy multi-layer text-shadow because iOS Webkit drops filters on background-clip */
         text-shadow: 
             0 0 10px rgba(255, 255, 255, 0.6),

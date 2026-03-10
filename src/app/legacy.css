@@ -1091,6 +1091,7 @@ footer {
 
     .glass-text-card {
         padding: 2rem;
+        margin-top: 2rem; /* Add spacing between the massive title and the text description */
     }
 
     .material-specs-grid {

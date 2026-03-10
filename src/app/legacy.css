@@ -226,7 +226,7 @@ body {
     background-clip: text;
     -webkit-text-fill-color: transparent;
     color: transparent;
-    filter: drop-shadow(0 15px 35px rgba(0, 0, 0, 0.8)); /* Deep shadow for 3D presence */
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.6)) drop-shadow(0 15px 35px rgba(0, 0, 0, 0.8)); /* Slight dark glow + Deep shadow for 3D presence */
 }
 
 .full-width-title {

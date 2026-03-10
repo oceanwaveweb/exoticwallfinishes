@@ -57,7 +57,7 @@ export default function ExhibitionPage() {
 
                     <div className="immersive-overlap-grid">
                         <div className="overlap-image reveals fade-in-up delay-1">
-                            <img src="/images/hero_plaster_wall_1772909184023.png" alt="Raw Venetian Plaster Wall" className="static-color" />
+                            <img src="/images/venetian_plaster_wall.png" alt="Raw Venetian Plaster Wall" className="static-color" />
                         </div>
 
                         <div className="overlap-card card-1 reveals slide-in-left">
@@ -67,7 +67,7 @@ export default function ExhibitionPage() {
                         </div>
 
                         <div className="overlap-image-trowel reveals fade-in-up delay-1">
-                            <img src="/images/artisan_trowel_1772909203882.png" alt="Artisan Plaster Trowel" className="static-color" />
+                            <img src="/images/artisan_trowel_cinematic.png" alt="Artisan Plaster Trowel" className="static-color" />
                         </div>
 
                         <div className="overlap-card card-2 reveals slide-in-left delay-1">

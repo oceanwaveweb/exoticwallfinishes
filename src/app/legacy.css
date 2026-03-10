@@ -927,10 +927,13 @@ footer {
 
 .escaped-title {
     font-size: clamp(4rem, 7vw, 7.5rem);
-    line-height: 0.8;
-    margin-bottom: 0;
+    line-height: 1.1;
+    /* Increased from 0.8 to prevent top/bottom clipping */
+    margin-bottom: -0.3em;
+    /* Visually offset the taller line height */
     margin-left: -1rem;
-    padding-right: 0.2em;
+    padding: 0.2em 0.2em 0.1em 0;
+    /* Expands bounding box for WebKit background-clip */
     /* Fixes WebKit background-clip italic cutoff */
     background: linear-gradient(135deg, #fff 0%, var(--accent-gold) 100%);
     -webkit-background-clip: text;

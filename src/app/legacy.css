@@ -977,8 +977,10 @@ footer {
     }
 
     .escaped-title {
-        font-size: 4rem;
+        font-size: clamp(2.5rem, 11vw, 4rem);
         margin-left: 0;
+        padding-right: 0.5em;
+        /* Extreme safety buffer for italic WebKit cutoff on tiny screens */
     }
 
     .glass-text-card {

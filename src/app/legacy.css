@@ -611,18 +611,18 @@ body {
 
 .brand-img-footer,
 .parent-logo-footer {
-    height: 1.8rem; /* Corrected scale for visibility */
+    height: 2.2rem; /* Clear, legible mobile branding */
     width: auto;
     object-fit: contain;
 }
 
 .brand-img-footer {
-    opacity: 0.9;
+    opacity: 1; /* Maximum visibility */
 }
 
 .parent-logo-footer {
-    opacity: 0.7;
-    filter: brightness(0) invert(1);
+    opacity: 1;
+    filter: brightness(0) invert(1); /* Ensure it's white */
 }
 
 .image-block img,
@@ -831,10 +831,9 @@ footer {
 }
 
 .brand-img-footer {
-    height: 1.8rem;
+    height: 2.2rem;
     width: auto;
     object-fit: contain;
-    filter: opacity(0.8);
 }
 
 .f-col.right {
@@ -1495,32 +1494,45 @@ footer {
         letter-spacing: 2px;
     }
 
+    .commission {
+        padding: 8rem 0; /* Reduce the huge "black void" gap on mobile */
+    }
+
     .footer-grid {
-        grid-template-columns: 1fr;
-        gap: 3rem;
+        display: flex;
+        flex-direction: column;
+        gap: 3.5rem;
         text-align: center;
         padding-bottom: 140px; 
-        min-height: 400px; /* Prevent collapse */
     }
 
     .f-col {
+        width: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        color: rgba(255, 255, 255, 0.9) !important; /* Force high contrast visibility */
+        color: #ffffff !important; /* Absolute contrast for mobile visibility */
     }
 
-    .f-col.right {
-        text-align: center;
+    .f-col p {
+        color: #ffffff !important;
+        opacity: 0.9;
+        margin-bottom: 0.5rem;
     }
 
     .logo-pair {
         justify-content: center;
-        margin-bottom: 0.5rem;
+        margin-bottom: 1rem;
     }
 
     .center-full {
-        margin-top: 3rem;
+        margin-top: 2rem;
+        width: 100%;
+    }
+
+    .marquee-content {
+        color: #ffffff !important;
+        opacity: 0.8;
     }
 }

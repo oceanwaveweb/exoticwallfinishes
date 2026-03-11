@@ -611,7 +611,7 @@ body {
 
 .brand-img-footer,
 .parent-logo-footer {
-    height: 1.5rem;
+    height: 1.1rem; /* Precise, elegant branding size */
     width: auto;
     object-fit: contain;
 }
@@ -831,7 +831,7 @@ footer {
 }
 
 .brand-img-footer {
-    height: 1.5rem;
+    height: 1.1rem;
     width: auto;
     object-fit: contain;
     filter: opacity(0.8);
@@ -1497,14 +1497,14 @@ footer {
 
     .footer-grid {
         grid-template-columns: 1fr;
-        gap: 2rem;
+        gap: 2.5rem;
         text-align: center;
-        padding-bottom: 100px;
-        /* Safe area for the 60px fixed bottom navbar */
+        padding-bottom: 140px; /* Generous margin for fixed mobile nav */
     }
 
     .f-col.right {
         text-align: center;
+        color: var(--text-light); /* Increased contrast for mobile visibility */
     }
 
     .f-logo {

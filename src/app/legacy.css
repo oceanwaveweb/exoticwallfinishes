@@ -611,7 +611,7 @@ body {
 
 .brand-img-footer,
 .parent-logo-footer {
-    height: 1.1rem; /* Precise, elegant branding size */
+    height: 1.8rem; /* Corrected scale for visibility */
     width: auto;
     object-fit: contain;
 }
@@ -831,7 +831,7 @@ footer {
 }
 
 .brand-img-footer {
-    height: 1.1rem;
+    height: 1.8rem;
     width: auto;
     object-fit: contain;
     filter: opacity(0.8);
@@ -1497,25 +1497,30 @@ footer {
 
     .footer-grid {
         grid-template-columns: 1fr;
-        gap: 2.5rem;
+        gap: 3rem;
         text-align: center;
-        padding-bottom: 140px; /* Generous margin for fixed mobile nav */
+        padding-bottom: 140px; 
+        min-height: 400px; /* Prevent collapse */
+    }
+
+    .f-col {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: rgba(255, 255, 255, 0.9) !important; /* Force high contrast visibility */
     }
 
     .f-col.right {
         text-align: center;
-        color: var(--text-light); /* Increased contrast for mobile visibility */
-    }
-
-    .f-logo {
-        justify-content: center;
     }
 
     .logo-pair {
         justify-content: center;
+        margin-bottom: 0.5rem;
     }
 
     .center-full {
-        margin-top: 2rem;
+        margin-top: 3rem;
     }
 }

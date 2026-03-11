@@ -64,28 +64,6 @@ export default function ExhibitionPage() {
                 </div>
             </section>
 
-            {/* --- Instagram Section --- */}
-            <section className="instagram-section reveals fade-in-up">
-                <div className="container">
-                    <div className="ig-header">
-                        <span className="overline">Social Presence</span>
-                        <h2 className="display-title">ON THE FEED</h2>
-                        <a href="https://www.instagram.com/exoticwallfinishes/" target="_blank" rel="noopener noreferrer" className="ig-link">
-                            @EXOTICWALLFINISHES
-                        </a>
-                    </div>
-                    <div className="ig-grid">
-                        <div className="ig-track">
-                            <div className="ig-item"><img src="/images/hero_plaster_wall_1772909184023.png" alt="Instagram Post" /></div>
-                            <div className="ig-item"><img src="/images/venetian_plaster_wall.png" alt="Instagram Post" /></div>
-                            <div className="ig-item"><img src="/images/marmorino_gold_texture.png" alt="Instagram Post" /></div>
-                            <div className="ig-item"><img src="/images/portfolio_concrete_tadelakt.png" alt="Instagram Post" /></div>
-                            <div className="ig-item"><img src="/images/portfolio_ivory_limestone.png" alt="Instagram Post" /></div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
             {/* --- 2. Avant-Garde Venetian Plaster Experience --- */}
             <section className="venetian-immersive" id="venetian-plaster">
                 <div className="venetian-parallax-bg"></div>
@@ -171,6 +149,28 @@ export default function ExhibitionPage() {
                         </div>
                     </div>
 
+                </div>
+            </section>
+
+            {/* --- Instagram Section --- */}
+            <section className="instagram-section reveals fade-in-up">
+                <div className="container">
+                    <div className="ig-header">
+                        <span className="overline">Social Presence</span>
+                        <h2 className="display-title">ON THE FEED</h2>
+                        <a href="https://www.instagram.com/exoticwallfinishes/" target="_blank" rel="noopener noreferrer" className="ig-link">
+                            @EXOTICWALLFINISHES
+                        </a>
+                    </div>
+                    <div className="ig-grid">
+                        <div className="ig-track">
+                            <div className="ig-item"><img src="/images/hero_plaster_wall_1772909184023.png" alt="Instagram Post" /></div>
+                            <div className="ig-item"><img src="/images/venetian_plaster_wall.png" alt="Instagram Post" /></div>
+                            <div className="ig-item"><img src="/images/marmorino_gold_texture.png" alt="Instagram Post" /></div>
+                            <div className="ig-item"><img src="/images/portfolio_concrete_tadelakt.png" alt="Instagram Post" /></div>
+                            <div className="ig-item"><img src="/images/portfolio_ivory_limestone.png" alt="Instagram Post" /></div>
+                        </div>
+                    </div>
                 </div>
             </section>
 

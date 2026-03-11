@@ -22,7 +22,7 @@ export default function Navbar() {
                 <Link href="/" className="side-nav-link">HOME</Link>
                 <Link href="/atelier" className="side-nav-link">ATELIER</Link>
                 <Link href="/exhibition" className="side-nav-link">EXHIBITION</Link>
-                <Link href="/commission" className="side-nav-link">COMMISSION</Link>
+                <Link href="/commission" className="side-nav-link">CONTACT</Link>
             </div>
         </>
     );

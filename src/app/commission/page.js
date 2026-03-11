@@ -10,7 +10,7 @@ export default function CommissionPage() {
             <section className="commission-hero reveals fade-in-up">
                 <div className="container">
                     <span className="overline">Bespoke Projects</span>
-                    <h1 className="display-title outline-text">COMMISSION</h1>
+                    <h1 className="display-title outline-text">CONTACT</h1>
                     
                     <div className="commission-grid">
                         <div className="comm-left">

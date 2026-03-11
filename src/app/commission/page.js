@@ -49,11 +49,7 @@ export default function CommissionPage() {
                 </div>
             </section>
             
-            <section className="commission-texture-break">
-                <div className="full-width-image reveals fade-in-up">
-                    <img src="/images/commission_hero_texture.png" alt="Architectural Studio" />
-                </div>
-            </section>
+
             <Footer />
         </main>
     )

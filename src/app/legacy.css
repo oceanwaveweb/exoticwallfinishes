@@ -603,23 +603,23 @@ body {
 }
 
 /* --- Footer Refinements --- */
+.logo-pair {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
 .brand-img-footer {
-    height: 4.5rem;
+    height: 3.5rem;
     width: auto;
     opacity: 0.9;
 }
 
 .parent-logo-footer {
-    height: 3.5rem;
+    height: 2.8rem;
     width: auto;
     opacity: 0.7;
-    margin-left: 2rem;
-    filter: brightness(0) invert(1); /* Assume pink flamingo needs to be white/muted in footer */
-}
-
-.logo-pair {
-    display: flex;
-    align-items: center;
+    filter: brightness(0) invert(1);
 }
 
 .image-block img,
@@ -828,20 +828,10 @@ footer {
 }
 
 .brand-img-footer {
-    height: auto;
-    max-height: 20px;
-    /* Larger on mobile */
-    max-width: 155px;
+    height: 3.5rem;
+    width: auto;
     object-fit: contain;
     filter: opacity(0.8);
-}
-
-@media (min-width: 768px) {
-    .brand-img-footer {
-        max-height: 20px;
-        /* max 16px height on md+ views */
-        max-width: 180px;
-    }
 }
 
 .f-col.right {
@@ -1504,10 +1494,10 @@ footer {
 
     .footer-grid {
         grid-template-columns: 1fr;
-        gap: 1.5rem;
+        gap: 2.5rem;
         text-align: center;
-        padding-bottom: 80px;
-        /* Space for the 60px fixed bottom navbar */
+        padding-bottom: 120px;
+        /* Increased space for the 60px fixed bottom navbar and safety margin */
     }
 
     .f-col.right {
@@ -1516,6 +1506,11 @@ footer {
 
     .f-logo {
         justify-content: center;
+    }
+
+    .logo-pair {
+        justify-content: center;
+        margin-bottom: 1rem;
     }
 
     .center-full {

@@ -35,10 +35,14 @@ export default function CommissionPage() {
                         </div>
                         
                         <div className="comm-right">
-                            <div className="appointment-card glass-card">
+                            <div className="appointment-card glass-card reveals fade-in-up delay-1">
                                 <h3>SCHEDULE YOUR APPOINTMENT</h3>
-                                <p>Phase 1: Concept & Texture Selection. Phase 2: Architectural Survey. Phase 3: Master Execution.</p>
-                                <a href="mailto:venetianman@live.com" className="cta-button gold">INITIATE INQUIRY</a>
+                                <form className="minimal-form" style={{ marginTop: '2rem' }}>
+                                    <input type="text" placeholder="Name" required />
+                                    <input type="email" placeholder="Email" required />
+                                    <textarea placeholder="Project Details" rows="3" required style={{ minHeight: '120px' }}></textarea>
+                                    <button type="submit" className="brutal-btn" style={{ width: '100%', marginTop: '1rem' }}>Initiatize Protocol</button>
+                                </form>
                             </div>
                         </div>
                     </div>

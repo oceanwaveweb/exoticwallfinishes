@@ -1,5 +1,6 @@
-import Navbar from '@/components/Navbar'
+import SmoothScroller from '@/components/SmoothScroller'
 import Hero from '@/components/Hero'
+import ScrollSequence from '@/components/ScrollSequence'
 import Atelier from '@/components/Atelier'
 import Exhibition from '@/components/Exhibition'
 import TextureStudy from '@/components/TextureStudy'
@@ -9,15 +10,17 @@ import ClientEffects from '@/components/ClientEffects'
 
 export default function Home() {
     return (
-        <main>
-            <ClientEffects />
-            <Navbar />
-            <Hero />
-            <Atelier />
-            <Exhibition />
-            <TextureStudy />
-            <Commission />
-            <Footer />
-        </main>
+        <>
+            <main>
+                <ClientEffects />
+                <Hero />
+                <ScrollSequence />
+                <Atelier />
+                <Exhibition />
+                <TextureStudy />
+                <Commission />
+                <Footer />
+            </main>
+        </>
     )
 }

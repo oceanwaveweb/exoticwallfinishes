@@ -1,15 +1,89 @@
+'use client';
+import { useEffect, useRef } from 'react'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import ClientEffects from '@/components/ClientEffects'
 
 export default function AtelierPage() {
+    const visionRef = useRef(null);
+    const bgTextRef = useRef(null);
+    const mainImgRef = useRef(null);
+    const floatImgRef = useRef(null);
+
+    useEffect(() => {
+        let ctx;
+        let isUnmounted = false;
+
+        Promise.all([
+            import('gsap'),
+            import('gsap/ScrollTrigger')
+        ]).then(([gsapModule, stModule]) => {
+            if (isUnmounted) return;
+
+            const gsap = gsapModule.default;
+            const ScrollTrigger = stModule.ScrollTrigger;
+            gsap.registerPlugin(ScrollTrigger);
+
+            ctx = gsap.context(() => {
+                // Background Text Parallax
+                gsap.to(bgTextRef.current, {
+                    xPercent: -20,
+                    ease: "none",
+                    scrollTrigger: {
+                        trigger: visionRef.current,
+                        start: "top bottom",
+                        end: "bottom top",
+                        scrub: true
+                    }
+                });
+
+                // Main Image Parallax
+                gsap.to(mainImgRef.current, {
+                    yPercent: -15,
+                    ease: "none",
+                    scrollTrigger: {
+                        trigger: visionRef.current,
+                        start: "top bottom",
+                        end: "bottom top",
+                        scrub: true
+                    }
+                });
+
+                // Floating Image Parallax (Faster)
+                gsap.to(floatImgRef.current, {
+                    yPercent: -40,
+                    ease: "none",
+                    scrollTrigger: {
+                        trigger: visionRef.current,
+                        start: "top bottom",
+                        end: "bottom top",
+                        scrub: true
+                    }
+                });
+            });
+        });
+
+        return () => {
+            isUnmounted = true;
+            if (ctx) ctx.revert();
+        };
+    }, []);
+
     return (
         <main>
             <ClientEffects />
             <Navbar />
 
+            {/* HERO SECTION (REDESIGNED) */}
+            <section className="atelier-hero reveals fade-in-up">
+                <div className="container">
+                    <span className="overline">The Studio</span>
+                    <h1 className="display-title outline-text">ATELIER</h1>
+                </div>
+            </section>
+
             {/* SECTION 1: THE ARTISAN (GIAN CARLO) */}
-            <section className="atelier" style={{ paddingTop: '20vh' }}>
+            <section className="atelier" style={{ paddingTop: '5vh' }}>
                 <div className="container layout-offset">
                     <div className="text-block reveals slide-in-left">
                         <span className="overline">01 / The Artisan</span>
@@ -41,47 +115,58 @@ export default function AtelierPage() {
                 </div>
             </section>
 
-            {/* SECTION 2: THE VISION (EXOTIC WALL FINISHES) */}
-            <section className="atelier dark-section reveals fade-in-up">
-                <div className="container layout-offset" style={{ flexDirection: 'row-reverse' }}>
-                    <div className="text-block" style={{ paddingLeft: 0, paddingRight: '5vw' }}>
-                        <span className="overline">02 / The Company</span>
-                        <h2 className="display-title">Exotic Wall<br />Finishes</h2>
+            {/* SECTION 2: THE VISION (EXOTIC WALL FINISHES REDESIGN) */}
+            <section className="vision-parallax-section" ref={visionRef}>
+                <div className="vision-bg-text" ref={bgTextRef}>EXOTIC</div>
 
-                        <blockquote className="motto-quote">
+                <div className="vision-container">
+                    <div className="vision-text-card reveals slide-in-left">
+                        <span className="overline" style={{ color: 'var(--accent-gold)' }}>02 / The Vision</span>
+                        <h2 className="display-title" style={{ marginTop: '1rem', marginBottom: '2.5rem' }}>Exotic Wall<br />Finishes</h2>
+
+                        <blockquote className="motto-quote" style={{ borderLeft: '2px solid var(--accent-gold)', paddingLeft: '1.5rem', marginLeft: '0' }}>
                             “Bringing Walls to Life”
                         </blockquote>
 
-                        <p className="bio-details">
-                            Our goal is to leave your walls looking sexy. We are top experts in a number of decorative wall finishes including Marmorino, Venetian Plaster, Faux finishes, Lime Paint and Lime Washes from Matte to texture finishes all the way to shiny finishes and more.
+                        <p className="bio-details" style={{ fontSize: '1.15rem', lineHeight: '1.8', opacity: 0.9 }}>
+                            Our goal is to leave your walls looking sexy. We are top experts in a number of decorative wall finishes 
+                            including Marmorino, Venetian Plaster, Faux finishes, Lime Paint and Lime Washes.
                         </p>
-                        <p className="bio-details">
-                            Exotic works with homeowners, business owners, interior designers, contractors, and architects to ensure that collaboratively the perfect experience and wall finish is created in your home or business.
+                        <p className="bio-details" style={{ opacity: 0.7 }}>
+                            Working collaboratively with homeowners, interior designers, and architects to create the perfect 
+                            monolithic experience in any space.
                         </p>
                     </div>
-                    <div className="image-block">
-                        <div className="aspect-landscape">
-                            {/* Placeholder for future company video/image */}
-                            <img src="/images/ideal_hero_livingroom_1772916024175.png" alt="Exotic Wall Finishes Living Room" style={{ objectPosition: 'left center' }} />
-                        </div>
+
+                    <div className="vision-image-wrap">
+                        <img 
+                            src="/images/ideal_hero_livingroom_1772916024175.png" 
+                            alt="Exotic Wall Finishes Vision" 
+                            className="vision-main-img"
+                            ref={mainImgRef}
+                        />
+                        <img 
+                            src="/images/artisan_trowel_cinematic.png" 
+                            alt="The Touch of an Artisan" 
+                            className="vision-floating-img"
+                            ref={floatImgRef}
+                        />
+                        <div className="vision-parallax-line"></div>
                     </div>
                 </div>
             </section>
 
             {/* SECTION 3: THE HERITAGE (MARMORINO TOOLS) */}
-            <section className="atelier reveals fade-in-up" style={{ paddingBottom: '10vh' }}>
+            <section className="atelier reveals fade-in-up" style={{ paddingBottom: '1.5rem' }}>
                 <div className="container layout-offset">
                     <div className="text-block">
                         <span className="overline">03 / The Heritage</span>
                         <h2 className="display-title">Marmorino<br />Tools</h2>
-                        <p className="bio-lead" style={{ marginTop: '2rem' }}>
+                        <p className="bio-lead" style={{ marginTop: '1rem' }}>
                             A partnership forged in the mastery of authentic Italian decorative arts.
                         </p>
                         <p className="bio-details">
                             Recognized globally for unparalleled artistry, Gian Carlo Sagasti was nominated and named the 2017 Ambassador for Novacolor Marmorino Products strictly out of Italy.
-                        </p>
-                        <p className="bio-details">
-                            This pinnacle achievement established Gian as the official Model and face for Marmorino Tools Worldwide, representing the highest echelon of plaster application tools and techniques.
                         </p>
                     </div>
                     <div className="image-block">

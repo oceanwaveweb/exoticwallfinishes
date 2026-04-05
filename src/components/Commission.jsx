@@ -1,9 +1,68 @@
+'use client';
+import { useEffect, useRef } from 'react';
+
 export default function Commission() {
+    const headingRef = useRef(null);
+
+    useEffect(() => {
+        let ctx;
+        Promise.all([
+            import('gsap'),
+            import('gsap/ScrollTrigger')
+        ]).then(([gsapModule, stModule]) => {
+            const gsap = gsapModule.default;
+            const ScrollTrigger = stModule.ScrollTrigger;
+            gsap.registerPlugin(ScrollTrigger);
+
+            ctx = gsap.context(() => {
+                const words = gsap.utils.toArray('.display-title .reveal-wrapper');
+                
+                words.forEach((word, i) => {
+                    const text = word.querySelector('.reveal-text');
+                    const bar = word.querySelector('.highlight-bar');
+                    
+                    const tl = gsap.timeline({
+                        scrollTrigger: {
+                            trigger: word,
+                            start: "top 90%",
+                            toggleActions: "play none none none"
+                        }
+                    });
+
+                    tl.to(bar, {
+                        scaleX: 1,
+                        duration: 0.6,
+                        ease: "power2.inOut",
+                        delay: i * 0.2
+                    })
+                    .set(text, { opacity: 1 })
+                    .to(bar, {
+                        scaleX: 0,
+                        transformOrigin: "right",
+                        duration: 0.6,
+                        ease: "power2.inOut"
+                    });
+                });
+            });
+        });
+        return () => ctx && ctx.revert();
+    }, []);
+
     return (
         <section className="commission" id="commission">
             <div className="container text-center reveals fade-in-up">
                 <span className="overline">03 / Contact</span>
-                <h2 className="display-title">Commence<br />The Protocol</h2>
+                <h2 className="display-title" ref={headingRef}>
+                    <span className="reveal-wrapper">
+                        <span className="reveal-text">INITIATE</span>
+                        <span className="highlight-bar"></span>
+                    </span>
+                    <br />
+                    <span className="reveal-wrapper">
+                        <span className="reveal-text">THE PROJECT</span>
+                        <span className="highlight-bar"></span>
+                    </span>
+                </h2>
 
                 <form className="minimal-form">
                     <input type="text" placeholder="Name" required />

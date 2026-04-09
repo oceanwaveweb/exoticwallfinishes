@@ -16,11 +16,11 @@ export default function Hero() {
 
             ctx = gsap.context(() => {
                 const lines = gsap.utils.toArray('.manifesto .reveal-wrapper');
-                
+
                 lines.forEach((line, i) => {
                     const text = line.querySelector('.reveal-text');
                     const bar = line.querySelector('.highlight-bar');
-                    
+
                     const tl = gsap.timeline({
                         scrollTrigger: {
                             trigger: line,
@@ -35,13 +35,13 @@ export default function Hero() {
                         ease: "power2.inOut",
                         delay: i * 0.15
                     })
-                    .set(text, { opacity: 1 })
-                    .to(bar, {
-                        scaleX: 0,
-                        transformOrigin: "right",
-                        duration: 0.5,
-                        ease: "power2.inOut"
-                    });
+                        .set(text, { opacity: 1 })
+                        .to(bar, {
+                            scaleX: 0,
+                            transformOrigin: "right",
+                            duration: 0.5,
+                            ease: "power2.inOut"
+                        });
                 });
             });
         });

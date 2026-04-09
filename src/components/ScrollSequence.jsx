@@ -62,7 +62,7 @@ export default function ScrollSequence() {
                 const frameCount = isMobile ? 40 : 36;
                 const folder = isMobile ? 'mobile' : 'desktop';
                 const currentFrame = index => (
-                    `/sl_exotic_frames/${folder}/ezgif-frame-${(index + 1).toString().padStart(3, '0')}.png`
+                    `/sl_exotic_frames/${folder}/ezgif-frame-${(index + 1).toString().padStart(3, '0')}.jpg`
                 );
 
                 const images = [];

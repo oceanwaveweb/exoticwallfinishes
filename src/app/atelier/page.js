@@ -1,14 +1,20 @@
 'use client';
-import { useEffect, useRef } from 'react'
-import Navbar from '@/components/Navbar'
+import { useEffect, useLayoutEffect, useRef } from 'react'
 import Footer from '@/components/Footer'
 import ClientEffects from '@/components/ClientEffects'
+
+const useIsomorphicLayoutEffect = typeof window !== 'undefined' ? useLayoutEffect : useEffect;
 
 export default function AtelierPage() {
     const visionRef = useRef(null);
     const bgTextRef = useRef(null);
     const mainImgRef = useRef(null);
     const floatImgRef = useRef(null);
+
+    // Fail-safe scroll reset specifically for this page
+    useIsomorphicLayoutEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
 
     useEffect(() => {
         let ctx;
@@ -72,7 +78,7 @@ export default function AtelierPage() {
     return (
         <main>
             <ClientEffects />
-            <Navbar />
+
 
             {/* HERO SECTION (REDESIGNED) */}
             <section className="atelier-hero reveals fade-in-up">
@@ -146,7 +152,7 @@ export default function AtelierPage() {
                             ref={mainImgRef}
                         />
                         <img 
-                            src="/images/artisan_trowel_cinematic.png" 
+                            src="/images/artisan_trowel_cinematic.jpg" 
                             alt="The Touch of an Artisan" 
                             className="vision-floating-img"
                             ref={floatImgRef}
@@ -157,7 +163,7 @@ export default function AtelierPage() {
             </section>
 
             {/* SECTION 3: THE HERITAGE (MARMORINO TOOLS) */}
-            <section className="atelier reveals fade-in-up" style={{ paddingBottom: '1.5rem' }}>
+            <section className="atelier heritage-section reveals fade-in-up">
                 <div className="container layout-offset">
                     <div className="text-block">
                         <span className="overline">03 / The Heritage</span>

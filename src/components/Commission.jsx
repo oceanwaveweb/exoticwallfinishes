@@ -65,9 +65,18 @@ export default function Commission() {
                 </h2>
 
                 <form className="minimal-form">
-                    <input type="text" placeholder="Name" required />
-                    <input type="email" placeholder="Email" required />
-                    <textarea placeholder="Project Details" rows="1" required></textarea>
+                    <div className="form-group">
+                        <input type="text" id="name" placeholder="Name" required />
+                        <label htmlFor="name">Name</label>
+                    </div>
+                    <div className="form-group">
+                        <input type="email" id="email" placeholder="Email" required />
+                        <label htmlFor="email">Email</label>
+                    </div>
+                    <div className="form-group">
+                        <textarea id="details" placeholder="Project Details" rows="1" required></textarea>
+                        <label htmlFor="details">Project Details</label>
+                    </div>
                     <button type="submit" className="brutal-btn">Submit</button>
                 </form>
             </div>

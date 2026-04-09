@@ -32,7 +32,7 @@ export default function SmoothScroller({ children }) {
                 smootherRef.current = ScrollSmoother.create({
                     wrapper: wrapperRef.current,
                     content: contentRef.current,
-                    smooth: 1.5,
+                    smooth: 1.2, // Reduced from 1.5 for a snappier, more responsive feel
                     effects: true,
                     smoothTouch: 0.1
                 });
@@ -60,15 +60,31 @@ export default function SmoothScroller({ children }) {
     useIsomorphicLayoutEffect(() => {
         // 1. Force native and GSAP scroll to 0 immediately
         const forceReset = () => {
+            if (typeof window === 'undefined') return;
+
+            // Reset native scroll
             window.history.scrollRestoration = "manual";
             window.scrollTo(0, 0);
+
+            // Reset GSAP Smoother
             if (smootherRef.current) {
-                smootherRef.current.scrollTop(0);
+                smootherRef.current.scrollTop(0, true);
+                smootherRef.current.paused(true); // Temporarily pause to prevent "catching" old scroll
+                setTimeout(() => {
+                    if (smootherRef.current) smootherRef.current.paused(false);
+                }, 100);
+            }
+
+            // Reset ScrollTrigger memory
+            if (typeof window !== 'undefined' && window.ScrollTrigger) {
+                window.ScrollTrigger.clearScrollMemory("manual");
             }
         };
 
+        // Initial immediate reset
         forceReset();
 
+        // 2. Perform a multi-stage reset sequence to fight Next.js and browser restoration
         Promise.all([
             import('gsap'),
             import('gsap/ScrollTrigger')
@@ -76,18 +92,23 @@ export default function SmoothScroller({ children }) {
             const gsap = gsapModule.default;
             const ScrollTrigger = stModule.ScrollTrigger;
 
-            // 2. Clear GSAP's internal scroll memory
-            ScrollTrigger.clearScrollMemory("manual");
-            
-            // 3. Perform a second reset after a micro-delay to catch any Next.js interference
-            setTimeout(() => {
+            // Execute reset sequence at critical stages
+            forceReset();
+            ScrollTrigger.refresh();
+
+            // Next.js often restores scroll after a micro-task or the next few frames
+            const retryReset = () => {
                 forceReset();
                 ScrollTrigger.refresh();
-            }, 50); // 50ms is usually enough for Next.js to commit the swap
+            };
+
+            // Sequence of resets to cover various completion states
+            const intervals = [50, 150, 400, 800];
+            intervals.forEach(ms => setTimeout(retryReset, ms));
         });
 
         return () => {
-            // Cleanup logic for page-level effects if any
+            if (smootherRef.current) smootherRef.current.paused(false);
         };
     }, [pathname]);
 

@@ -44,16 +44,10 @@ export default function ClientEffects() {
         });
 
         // --- Parallax Effects ---
-        const heroImg = document.querySelector('.parallax-img');
         const centerLine = document.querySelector('.center-line');
 
         const handleScroll = () => {
             const scrolled = window.scrollY;
-
-            // Hero image parallax
-            if (heroImg && scrolled < window.innerHeight) {
-                heroImg.style.transform = `translateY(${(-10) + (scrolled * 0.05)}%)`;
-            }
 
             // Center line subtle fade
             if (centerLine) {

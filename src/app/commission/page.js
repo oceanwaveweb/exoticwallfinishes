@@ -21,43 +21,6 @@ export default function CommissionPage() {
             gsap.registerPlugin(ScrollTrigger);
 
             ctx = gsap.context(() => {
-                // Background Parallax
-                gsap.to('.contact-bg-img', {
-                    yPercent: 20,
-                    ease: "none",
-                    scrollTrigger: {
-                        trigger: sectionRef.current,
-                        start: "top bottom",
-                        end: "bottom top",
-                        scrub: true
-                    }
-                });
-
-                // Architectural Shapes Parallax
-                gsap.to('.shape-1', {
-                    y: -150,
-                    x: 50,
-                    ease: "none",
-                    scrollTrigger: {
-                        trigger: sectionRef.current,
-                        start: "top bottom",
-                        end: "bottom top",
-                        scrub: true
-                    }
-                });
-
-                gsap.to('.shape-2', {
-                    y: -80,
-                    x: -30,
-                    ease: "none",
-                    scrollTrigger: {
-                        trigger: sectionRef.current,
-                        start: "top bottom",
-                        end: "bottom top",
-                        scrub: true
-                    }
-                });
-
                 // Staggered entrance for contact text
                 gsap.fromTo('.stagger-text',
                     { y: 50, opacity: 0 },
@@ -86,15 +49,7 @@ export default function CommissionPage() {
             <main>
                 <ClientEffects />
                 <section className="contact-parallax-section" ref={sectionRef}>
-                    <img
-                        src="file:///C:/Users/cjeod/.gemini/antigravity/brain/b7fc5732-013e-44d1-9157-c35f07f62c19/premium_obsidian_texture_1775376816744.png"
-                        alt="Premium Obsidian Abstract Texture"
-                        className="contact-bg-img"
-                    />
-
-                    {/* Architectural Floating Atmosphere */}
-                    <div className="arc-shape shape-1"></div>
-                    <div className="arc-shape shape-2"></div>
+                    <div className="contact-bottom-glow"></div>
 
                     <div className="container">
                         <div className="contact-hero-header" style={{ marginBottom: '6rem' }}>

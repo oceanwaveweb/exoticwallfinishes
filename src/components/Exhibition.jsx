@@ -1,12 +1,17 @@
 'use client';
-import { Video } from "lucide-react";
-import { useEffect, useLayoutEffect, useRef } from "react";
+import Link from "next/link";
+import { ArrowRight, Video, X } from "lucide-react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 
 const useIsomorphicLayoutEffect = typeof window !== 'undefined' ? useLayoutEffect : useEffect;
+
+import { EXHIBITION_DATA } from "@/data/exhibition";
 
 export default function Exhibition() {
     const containerRef = useRef(null);
     const headingRef = useRef(null);
+    const [selectedItem, setSelectedItem] = useState(null);
 
     useIsomorphicLayoutEffect(() => {
         let ctx;
@@ -24,12 +29,12 @@ export default function Exhibition() {
 
             ctx = gsap.context(() => {
                 // Micro-animation stagger for the words
-                gsap.fromTo('.exhibit-word', 
+                gsap.fromTo('.exhibit-word',
                     { y: 60, opacity: 0, rotateX: -15 },
-                    { 
-                        y: 0, opacity: 1, rotateX: 0, 
-                        duration: 1.4, 
-                        stagger: 0.25, 
+                    {
+                        y: 0, opacity: 1, rotateX: 0,
+                        duration: 1.4,
+                        stagger: 0.25,
                         ease: "power3.out",
                         scrollTrigger: {
                             trigger: headingRef.current,
@@ -38,7 +43,7 @@ export default function Exhibition() {
                     }
                 );
 
-                // Create the sticky pin for the entire heading area (including blur)
+                // Create the sticky pin for the entire heading area
                 ScrollTrigger.create({
                     trigger: headingRef.current,
                     start: "top top",
@@ -67,44 +72,74 @@ export default function Exhibition() {
                         <span className="exhibition-overline exhibit-word">02 / Exhibition</span>
                         <h2 className="exhibition-main-title">
                             <span className="exhibit-word" style={{ display: 'inline-block' }}>MASTER</span>{' '}
+                            <br className="mobile-br" />
                             <span className="exhibit-word" style={{ display: 'inline-block' }}>WORKS</span>
                         </h2>
                         <div className="exhibition-heading-line exhibit-word"></div>
                     </div>
                 </div>
 
-                <div className="exhibition-gallery">
-                    <div className="gallery-item reveals fade-in-up">
-                        <div className="aspect-landscape">
-                            <img src="/images/green_marmorino.jpg" alt="The Anthracite Estate" />
+                <div className="gallery-items-wrapper">
+                    {EXHIBITION_DATA.slice(0, 3).map((item) => (
+                        <div
+                            key={item.id}
+                            className={`gallery-item reveals fade-in-up ${item.id === 1 ? 'featured-item' : ''}`}
+                            onClick={() => setSelectedItem(item)}
+                            style={{ cursor: 'pointer' }}
+                        >
+                            <div className={`aspect-${item.type}`}>
+                                {item.isVideo ? (
+                                    <video src={item.img} autoPlay loop muted playsInline style={{ width: '100%', height: '100%', objectFit: 'cover' }}></video>
+                                ) : (
+                                    <img src={item.img} alt={item.title} />
+                                )}
+                            </div>
+                            <div className="item-meta">
+                                <h3>{item.title}</h3>
+                                <span>{item.subtitle}</span>
+                            </div>
                         </div>
-                        <div className="item-meta">
-                            <h3>Turquoise Sea Condo</h3>
-                            <span>Venetian Plaster Marmorino</span>
-                        </div>
-                    </div>
+                    ))}
 
-                    <div className="gallery-item reveals fade-in-up">
-                        <div className="aspect-square">
-                            <img src="/images/clean_white_venetian.jpg" alt="Clean White Venetian" />
+                    {/* Aesthetic CTA Card */}
+                    <Link href="/exhibition" className="gallery-item exhibit-cta-card reveals fade-in-up">
+                        <div className="cta-content">
+                            <span className="cta-overline">03 / The Collection</span>
+                            <h3 className="cta-title">EXPLORE ALL <br />MASTER WORKS</h3>
+                            <div className="cta-action">
+                                <span>Discover More</span>
+                                <ArrowRight className="cta-icon" size={20} />
+                            </div>
                         </div>
-                        <div className="item-meta">
-                            <h3>Clean White Venetian</h3>
-                            <span>Shiny Venetian Plaster</span>
-                        </div>
-                    </div>
-
-                    <div className="gallery-item reveals fade-in-up">
-                        <div className="aspect-portrait">
-                            <img src="/images/portfolio_bathroom_1772916040233.jpg" alt="Portfolio Black" />
-                        </div>
-                        <div className="item-meta">
-                            <h3>Shiny Black Venetian</h3>
-                            <span>Accented Exotic Elegance</span>
-                        </div>
-                    </div>
+                    </Link>
                 </div>
             </div>
+
+            {/* Exhibition Detail Modal */}
+            {selectedItem && typeof window !== 'undefined' && createPortal(
+                <div className="exhibition-modal-overlay" onClick={() => setSelectedItem(null)}>
+                    <div className="modal-close-hint">CLICK ANYWHERE TO CLOSE</div>
+                    <div className="exhibition-modal-content">
+                        <div className="modal-grid">
+                            <div className="modal-image-area">
+                                {selectedItem.isVideo ? (
+                                    <video src={selectedItem.img} autoPlay loop muted playsInline style={{ width: '100%', height: '100%', objectFit: 'cover' }}></video>
+                                ) : (
+                                    <img src={selectedItem.img} alt={selectedItem.title} />
+                                )}
+                            </div>
+                            <div className="modal-text-area">
+                                <span className="modal-overline">Exhibition Detail</span>
+                                <h2 className="modal-title">{selectedItem.title}</h2>
+                                <p className="modal-subtitle">{selectedItem.subtitle}</p>
+                                <div className="modal-divider"></div>
+                                <p className="modal-description">{selectedItem.description}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>,
+                document.body
+            )}
         </section>
     );
 }

@@ -43,20 +43,11 @@ export default function ExhibitionPage() {
                     }
                 );
 
-                // Sticky pin for the heading area
-                ScrollTrigger.create({
-                    trigger: headingRef.current,
-                    start: "top top",
-                    endTrigger: containerRef.current,
-                    end: "bottom bottom",
-                    pin: true,
-                    pinSpacing: false,
-                    invalidateOnRefresh: true,
-                });
+                // Note: Sticky pinning removed as per request
 
                 // Marmorino Monolith Scroll Reveal - Persistent Glow
                 gsap.fromTo('.gold-glow-monolith',
-                    { 
+                    {
                         y: 40,
                         boxShadow: "0 10px 30px rgba(0,0,0,0.5)"
                     },
@@ -94,7 +85,7 @@ export default function ExhibitionPage() {
                             <div className="exhibition-heading">
                                 <span className="exhibition-overline exhibit-word">Exhibition</span>
                                 <h1 className="exhibition-main-title">
-                                    <span className="exhibit-word" style={{ display: 'inline-block' }}>MASTER</span>{' '}
+                                    <span className="exhibit-word" style={{ display: 'inline-block' }}>EXOTIC</span>{' '}
                                     <br className="mobile-br" />
                                     <span className="exhibit-word" style={{ display: 'inline-block' }}>WORKS</span>
                                 </h1>
@@ -191,8 +182,12 @@ export default function ExhibitionPage() {
 
                             <div className="overlap-card card-3 reveals slide-in-left delay-2">
                                 <span className="card-num">03</span>
-                                <h3>Chemical Rebirth</h3>
-                                <p>As the wet plaster cures, it absorbs carbon dioxide from the atmosphere—literally crystallizing back into a solid stone facade.</p>
+                                <h3>Modern Mastery</h3>
+                                <p>Today, Exotic elevates this historic craft. Exotic hand-trowels authentic lime-based plasters with masterful precision, transforming standard walls into seamless, luxurious textures—ranging from earthy matte to brilliant, mirror-like gloss.</p>
+                            </div>
+
+                            <div className="overlap-image-third reveals fade-in-up delay-2">
+                                <img src="/images/Exhibition 3rd card.jpg" alt="Exhibition Venetian Plaster Finish" className="static-color" />
                             </div>
                         </div>
                     </div>

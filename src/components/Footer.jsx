@@ -3,8 +3,11 @@ export default function Footer() {
         <footer>
             <div className="container footer-grid">
                 <div className="f-col">
-                    <div className="logo-pair">
-                        <img src="/images/brand_logo.png" alt="G.C. Logo" className="brand-img-footer" />
+                    <div className="logo-pair" style={{ display: 'flex', alignItems: 'center', gap: '2rem' }}>
+                        <img src="/images/Footer_WFD.png" alt="Exotic Wall Finishes" className="brand-img-footer" />
+                        <a href="https://exoticluxuryline.com/" target="_blank" rel="noopener noreferrer" style={{ display: 'block' }}>
+                            <img src="/images/Footer_WFD.png" alt="Exotic Wall Finishes" className="brand-img-footer" />
+                        </a>
                     </div>
                 </div>
                 <div className="f-col right">
@@ -33,7 +36,7 @@ export default function Footer() {
                         </a>
                     </div>
 
-                    <a href="/accessibility" style={{ color: 'var(--text-muted)', fontSize: '0.7rem', textDecoration: 'none', marginTop: '1.5rem', display: 'block' }}>ACCESSIBILITY</a>
+                    <a href="/accessibility" style={{ color: 'var(--text-muted)', fontSize: '0.7rem', textDecoration: 'none', marginTop: '0.5rem', display: 'block' }}>ACCESSIBILITY</a>
                 </div>
                 <div className="f-col center-full">
                     <div className="marquee">

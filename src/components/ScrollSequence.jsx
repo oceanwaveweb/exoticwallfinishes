@@ -13,12 +13,12 @@ export const LOGO_CONFIG = {
     animationStyle: 'fade-pop',
 
     // Choose what frame the logo starts appearing on (e.g. video starts at 0, ends at 36 or 40)
-    enterFrame: 5,
-    fullyVisibleFrame: 15,
+    enterFrame: 10,
+    fullyVisibleFrame: 25,
 
     // Choose what frame the logo starts disappearing on
-    startExitFrame: 26, // Stays visible much longer
-    fullyGoneFrame: 36,
+    startExitFrame: 45, // Stays visible much longer
+    fullyGoneFrame: 58,
 };
 // ============================================================================
 
@@ -59,10 +59,10 @@ export default function ScrollSequence() {
                 canvas.width = isMobile ? 720 : 1920;
                 canvas.height = isMobile ? 1280 : 1080;
 
-                const frameCount = isMobile ? 40 : 36;
+                const frameCount = isMobile ? 64 : 58;
                 const folder = isMobile ? 'mobile' : 'desktop';
                 const currentFrame = index => (
-                    `/sl_exotic_frames/${folder}/ezgif-frame-${(index + 1).toString().padStart(3, '0')}.jpg`
+                    `/sl_exotic_frames/${folder}/ezgif-frame-${(index + 1).toString().padStart(3, '0')}.png`
                 );
 
                 const images = [];
@@ -78,7 +78,11 @@ export default function ScrollSequence() {
                     const frameValue = animationParams.frame;
                     const index1 = Math.floor(frameValue);
                     const index2 = Math.min(Math.ceil(frameValue), frameCount - 1);
-                    const alpha = frameValue - index1;
+                    let alpha = frameValue - index1;
+
+                    // Optimization: If alpha is near 0 or 1, snap it to prevent microscopic ghosting
+                    if (alpha < 0.01) alpha = 0;
+                    if (alpha > 0.99) alpha = 1;
 
                     const img1 = images[index1];
                     const img2 = images[index2];
@@ -126,6 +130,12 @@ export default function ScrollSequence() {
                         start: "top top",
                         end: "+=2000",
                         scrub: 1.5,
+                        snap: {
+                            snapTo: 1 / (frameCount - 1),
+                            duration: { min: 0.2, max: 0.5 },
+                            delay: 0.1,
+                            ease: "power2.inOut"
+                        }
                     }
                 });
 
@@ -186,6 +196,9 @@ export default function ScrollSequence() {
         <section ref={containerRef} className="scroll-sequence" style={{ height: 'calc(100vh + 2000px)', width: '100%', position: 'relative', backgroundColor: '#000', zIndex: 1 }}>
             <div ref={wrapperRef} style={{ width: '100%', height: '100vh', overflow: 'hidden', position: 'relative' }}>
                 <canvas ref={canvasRef} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+
+                {/* Top Gradient Overlay to ensure Navbar readability against gray video frames */}
+                <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '15rem', background: 'linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, transparent 100%)', zIndex: 1, pointerEvents: 'none' }} />
 
                 {/* Scroll Synchronized Configurable Logo */}
                 <div

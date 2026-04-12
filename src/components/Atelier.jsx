@@ -38,7 +38,7 @@ export default function Atelier() {
                 </div>
                 <div className="image-block reveals zoom-in delay-1">
                     <div className="aspect-portrait">
-                        <img src="/images/artisan_trowel_1772909203882.png" alt="Gian Carlo Sagasti Trowel" />
+                        <img src="/images/artisan_trowel_1772909203882.jpg" alt="Gian Carlo Sagasti Trowel" />
                     </div>
                 </div>
             </div>

@@ -54,7 +54,7 @@ export default function Hero() {
                 <img src="/images/ideal_hero_livingroom_1772916024175.png" alt="Luxury Living Room Plaster" className="parallax-img" />
             </div>
             <div className="hero-typography">
-                <h1 className="split-text">EXOTIC<br />SURFACE</h1>
+                <h1 className="split-text">EXOTIC<br />FINISHES</h1>
                 <p className="manifesto" ref={manifestoRef}>
                     <span className="reveal-wrapper">
                         <span className="reveal-text">We do not paint walls.</span>

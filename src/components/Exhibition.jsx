@@ -43,17 +43,7 @@ export default function Exhibition() {
                     }
                 );
 
-                // Create the sticky pin for the entire heading area
-                ScrollTrigger.create({
-                    trigger: headingRef.current,
-                    start: "top top",
-                    endTrigger: containerRef.current,
-                    end: "bottom bottom",
-                    pin: true,
-                    pinSpacing: false,
-                    toggleClass: "is-pinned",
-                    invalidateOnRefresh: true,
-                });
+                // Note: Sticky pinning removed as per request
             });
             ScrollTrigger.refresh();
         });
@@ -71,7 +61,7 @@ export default function Exhibition() {
                     <div className="exhibition-heading">
                         <span className="exhibition-overline exhibit-word">02 / Exhibition</span>
                         <h2 className="exhibition-main-title">
-                            <span className="exhibit-word" style={{ display: 'inline-block' }}>MASTER</span>{' '}
+                            <span className="exhibit-word" style={{ display: 'inline-block' }}>EXOTIC</span>{' '}
                             <br className="mobile-br" />
                             <span className="exhibit-word" style={{ display: 'inline-block' }}>WORKS</span>
                         </h2>
@@ -102,16 +92,18 @@ export default function Exhibition() {
                     ))}
 
                     {/* Aesthetic CTA Card */}
-                    <Link href="/exhibition" className="gallery-item exhibit-cta-card reveals fade-in-up">
+                    <div className="gallery-item exhibit-cta-card reveals fade-in-up">
                         <div className="cta-content">
                             <span className="cta-overline">03 / The Collection</span>
-                            <h3 className="cta-title">EXPLORE ALL <br />MASTER WORKS</h3>
-                            <div className="cta-action">
-                                <span>Discover More</span>
-                                <ArrowRight className="cta-icon" size={20} />
-                            </div>
+                            <h3 className="cta-title">EXPLORE ALL <br />EXOTIC WORKS</h3>
+                            <Link href="/exhibition" className="cta-button-link">
+                                <div className="cta-action">
+                                    <span>Discover More</span>
+                                    <ArrowRight className="cta-icon" size={20} />
+                                </div>
+                            </Link>
                         </div>
-                    </Link>
+                    </div>
                 </div>
             </div>
 

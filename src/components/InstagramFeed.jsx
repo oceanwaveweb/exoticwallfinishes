@@ -8,19 +8,19 @@ import { useState } from 'react';
  */
 export default function InstagramFeed() {
   const posts = [
-    { id: 1, url: '/images/Instagram/1.jpg', likes: '1.2k', comments: '42' },
-    { id: 2, url: '/images/Instagram/2.jpg', likes: '840', comments: '18' },
-    { id: 3, url: '/images/Instagram/3.jpg', likes: '2.1k', comments: '64' },
-    { id: 4, url: '/images/Instagram/4.jpg', likes: '912', comments: '22' },
-    { id: 5, url: '/images/Instagram/5.jpg', likes: '1.5k', comments: '31' },
-    { id: 6, url: '/images/Instagram/6.jpg', likes: '730', comments: '15' },
+    { id: 1, url: '/images/Instagram/1.jpg', likes: '1.2k', comments: '42', link: 'https://www.instagram.com/p/DSvWxxkEkba/' },
+    { id: 2, url: '/images/Instagram/2.jpg', likes: '840', comments: '18', link: 'https://www.instagram.com/p/DTvpoFTCahP/' },
+    { id: 3, url: '/images/Instagram/3.jpg', likes: '2.1k', comments: '64', link: 'https://www.instagram.com/p/DTy0wxGjC_t/' },
+    { id: 4, url: '/images/Instagram/4.jpg', likes: '912', comments: '22', link: 'https://www.instagram.com/p/DT5gVKRkT4-/' },
+    { id: 5, url: '/images/Instagram/5.jpg', likes: '1.5k', comments: '31', link: 'https://www.instagram.com/p/DVhizYRjFSV/' },
+    { id: 6, url: '/images/Instagram/6.jpg', likes: '730', comments: '15', link: 'https://www.instagram.com/p/DWY43-Njn1F/' },
   ];
 
   return (
     <div className="ig-container">
       {/* --- Premium Social Header --- */}
       <div className="ig-profile-header">
-        <div className="ig-profile-info">
+        <a href="https://www.instagram.com/exoticwallfinishes/" target="_blank" rel="noopener noreferrer" className="ig-profile-info" style={{ textDecoration: 'none', color: 'inherit' }}>
           <div className="ig-avatar">
             <img src="/images/Instagram/IG_Logo.jpg" alt="Exotic Wall Finishes" className="avatar-img" />
             <div className="avatar-ring"></div>
@@ -36,13 +36,13 @@ export default function InstagramFeed() {
             </div>
             <div className="ig-subtitle">ON THE FEED • LATEST ARRIVALS</div>
           </div>
-        </div>
+        </a>
         <div className="ig-header-line"></div>
       </div>
 
       <div className="ig-grid">
         {posts.map((post) => (
-          <div key={post.id} className="ig-item-wrapper">
+          <a key={post.id} href={post.link} target="_blank" rel="noopener noreferrer" className="ig-item-wrapper" style={{ textDecoration: 'none' }}>
             <div className="ig-item">
               <img src={post.url} alt="Exotic Wall Finishes Instagram" loading="lazy" />
               <div className="ig-overlay">
@@ -54,7 +54,7 @@ export default function InstagramFeed() {
                 </div>
               </div>
             </div>
-          </div>
+          </a>
         ))}
       </div>
       

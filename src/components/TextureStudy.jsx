@@ -82,7 +82,7 @@ export default function TextureStudy() {
             />
             <div className="huge-texture-bg" style={{ position: 'relative', width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 1, pointerEvents: 'none' }}>
                 <h2 className="giant-bg-text" ref={textRef} style={{ willChange: 'transform' }}>
-                    <span>EXOTIC<br></br>VENETIAN</span>
+                    <span>BLACK<br></br>MARMORINO</span>
                 </h2>
             </div>
         </section>

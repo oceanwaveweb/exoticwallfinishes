@@ -83,8 +83,8 @@ export default function AtelierPage() {
             {/* HERO SECTION (REDESIGNED) */}
             <section className="atelier-hero reveals fade-in-up">
                 <div className="container">
-                    <span className="overline">The Studio</span>
-                    <h1 className="display-title outline-text">ATELIER</h1>
+                    <span className="overline">The Exotic</span>
+                    <h1 className="display-title">STUDIO</h1>
                 </div>
             </section>
 
@@ -115,7 +115,7 @@ export default function AtelierPage() {
                     </div>
                     <div className="image-block reveals zoom-in delay-1">
                         <div className="aspect-portrait">
-                            <img src="/images/artisan_trowel_1772909203882.png" alt="Gian Carlo Sagasti Trowel" />
+                            <img src="/images/artisan_trowel_1772909203882.jpg" alt="Gian Carlo Sagasti Trowel" />
                         </div>
                     </div>
                 </div>
@@ -135,25 +135,25 @@ export default function AtelierPage() {
                         </blockquote>
 
                         <p className="bio-details" style={{ fontSize: '1.15rem', lineHeight: '1.8', opacity: 0.9 }}>
-                            Our goal is to leave your walls looking sexy. We are top experts in a number of decorative wall finishes 
+                            Our goal is to leave your walls looking sexy. We are top experts in a number of decorative wall finishes
                             including Marmorino, Venetian Plaster, Faux finishes, Lime Paint and Lime Washes.
                         </p>
                         <p className="bio-details" style={{ opacity: 0.7 }}>
-                            Working collaboratively with homeowners, interior designers, and architects to create the perfect 
+                            Working collaboratively with homeowners, interior designers, and architects to create the perfect
                             monolithic experience in any space.
                         </p>
                     </div>
 
                     <div className="vision-image-wrap">
-                        <img 
-                            src="/images/ideal_hero_livingroom_1772916024175.png" 
-                            alt="Exotic Wall Finishes Vision" 
+                        <img
+                            src="/images/Instagram/6.jpg"
+                            alt="Exotic Wall Finishes Vision"
                             className="vision-main-img"
                             ref={mainImgRef}
                         />
-                        <img 
-                            src="/images/artisan_trowel_cinematic.jpg" 
-                            alt="The Touch of an Artisan" 
+                        <img
+                            src="/images/Exhibition 3rd card.jpg"
+                            alt="The Touch of an Artisan"
                             className="vision-floating-img"
                             ref={floatImgRef}
                         />

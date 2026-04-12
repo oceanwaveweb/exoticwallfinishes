@@ -52,10 +52,10 @@ export default function CommissionPage() {
                     <div className="contact-bottom-glow"></div>
 
                     <div className="container">
-                        <div className="contact-hero-header" style={{ marginBottom: '6rem' }}>
-                            <span className="contact-overline stagger-text">Contact</span>
-                            <h1 className="large-lead stagger-text">
-                                Let's Build<br />Your Vision
+                        <div className="contact-hero-header" style={{ marginBottom: '6rem', textAlign: 'center', width: '100%' }}>
+                            <span className="contact-overline stagger-text" style={{ display: 'inline-block', margin: '0 auto 1rem' }}>Contact</span>
+                            <h1 className="large-lead stagger-text" style={{ fontSize: 'clamp(3rem, 6.5vw, 6rem)', whiteSpace: 'nowrap', textShadow: '0 0 30px rgba(255, 255, 255, 0.5), 0 0 60px rgba(255, 255, 255, 0.2)' }}>
+                                Let's Build Your Vision
                             </h1>
                         </div>
 

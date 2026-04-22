@@ -3,28 +3,6 @@ import { useEffect } from 'react';
 
 export default function ClientEffects() {
     useEffect(() => {
-        // --- Custom Cursor ---
-        const cursor = document.querySelector('.custom-cursor');
-        const hoverables = document.querySelectorAll('a, button, .menu-trigger, .menu-close, input, textarea');
-
-        const moveCursor = (e) => {
-            if (cursor) {
-                cursor.style.left = e.clientX + 'px';
-                cursor.style.top = e.clientY + 'px';
-            }
-        };
-        document.addEventListener('mousemove', moveCursor);
-
-        const addHover = () => cursor?.classList.add('hovering');
-        const removeHover = () => cursor?.classList.remove('hovering');
-
-        hoverables.forEach(elem => {
-            elem.addEventListener('mouseenter', addHover);
-            elem.addEventListener('mouseleave', removeHover);
-        });
-
-
-
         // --- Scroll Animations (Intersection Observer) ---
         const reveals = document.querySelectorAll('.reveals');
 
@@ -62,11 +40,6 @@ export default function ClientEffects() {
         window.addEventListener('scroll', handleScroll);
 
         return () => {
-            document.removeEventListener('mousemove', moveCursor);
-            hoverables.forEach(elem => {
-                elem.removeEventListener('mouseenter', addHover);
-                elem.removeEventListener('mouseleave', removeHover);
-            });
 
             revealObserver.disconnect();
             window.removeEventListener('scroll', handleScroll);

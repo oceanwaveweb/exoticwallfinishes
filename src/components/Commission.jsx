@@ -15,7 +15,7 @@ export default function Commission() {
             gsap.registerPlugin(ScrollTrigger);
 
             ctx = gsap.context(() => {
-                const words = gsap.utils.toArray('.display-title .reveal-wrapper');
+                const words = gsap.utils.toArray('.premium-editorial-title .reveal-wrapper');
                 
                 words.forEach((word, i) => {
                     const text = word.querySelector('.reveal-text');
@@ -52,14 +52,9 @@ export default function Commission() {
         <section className="commission" id="commission">
             <div className="container text-center reveals fade-in-up">
                 <span className="overline">03 / Contact</span>
-                <h2 className="display-title" ref={headingRef}>
+                <h2 className="premium-editorial-title" ref={headingRef} style={{ fontSize: 'clamp(2rem, 7vw, 5rem)', marginBottom: '4rem', whiteSpace: 'nowrap' }}>
                     <span className="reveal-wrapper">
-                        <span className="reveal-text">INITIATE</span>
-                        <span className="highlight-bar"></span>
-                    </span>
-                    <br />
-                    <span className="reveal-wrapper">
-                        <span className="reveal-text">THE PROJECT</span>
+                        <span className="reveal-text">GET IN TOUCH</span>
                         <span className="highlight-bar"></span>
                     </span>
                 </h2>

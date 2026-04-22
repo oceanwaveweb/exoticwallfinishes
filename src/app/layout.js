@@ -24,7 +24,6 @@ export default function RootLayout({ children }) {
             <body suppressHydrationWarning>
 
                 <div className="noise-overlay"></div>
-                <div className="custom-cursor"></div>
                 <div className="center-line"></div>
                 <Navbar />
                 <SmoothScroller>

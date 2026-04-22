@@ -22,8 +22,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    cursor: none;
-    /* Custom cursor */
 }
 
 html {
@@ -73,26 +71,7 @@ body {
     pointer-events: none;
 }
 
-/* --- Custom Cursor --- */
-.custom-cursor {
-    width: 8px;
-    height: 8px;
-    background-color: var(--text-light);
-    border-radius: 50%;
-    position: fixed;
-    pointer-events: none;
-    z-index: 9999;
-    transform: translate(-50%, -50%);
-    mix-blend-mode: difference;
-    transition: width 0.3s var(--ease), height 0.3s var(--ease), background-color 0.3s;
-}
 
-.custom-cursor.hovering {
-    width: 80px;
-    height: 80px;
-    background-color: transparent;
-    border: 1px solid var(--text-light);
-}
 
 /* --- Navigation --- */
 .navbar {
@@ -2251,7 +2230,7 @@ footer {
     }
 
     .navbar {
-        padding: 0.6rem 1.5rem;
+        padding: 1.25rem 1.5rem;
     }
 
     .top-socials {

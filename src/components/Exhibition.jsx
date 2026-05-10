@@ -59,7 +59,7 @@ export default function Exhibition() {
             <div className="sticky-container">
                 <div ref={headingRef} className="exhibition-title-area" style={{ position: 'relative', top: 'auto', width: '100%' }}>
                     <div className="exhibition-heading">
-                        <span className="exhibition-overline exhibit-word">02 / Exhibition</span>
+                        <span className="exhibition-overline exhibit-word">02 / Gallery</span>
                         <h2 className="exhibition-main-title">
                             <span className="exhibit-word" style={{ display: 'inline-block' }}>EXOTIC</span>{' '}
                             <br className="mobile-br" />
@@ -96,7 +96,7 @@ export default function Exhibition() {
                         <div className="cta-content">
                             <span className="cta-overline">03 / The Collection</span>
                             <h3 className="cta-title">EXPLORE ALL <br />EXOTIC WORKS</h3>
-                            <Link href="/exhibition" className="cta-button-link">
+                            <Link href="/gallery" className="cta-button-link">
                                 <div className="cta-action">
                                     <span>Discover More</span>
                                     <ArrowRight className="cta-icon" size={20} />
@@ -121,11 +121,16 @@ export default function Exhibition() {
                                 )}
                             </div>
                             <div className="modal-text-area">
-                                <span className="modal-overline">Exhibition Detail</span>
+                                <span className="modal-overline">Gallery Detail</span>
                                 <h2 className="modal-title">{selectedItem.title}</h2>
                                 <p className="modal-subtitle">{selectedItem.subtitle}</p>
                                 <div className="modal-divider"></div>
                                 <p className="modal-description">{selectedItem.description}</p>
+                                {selectedItem.link && (
+                                    <a href={selectedItem.link} target="_blank" rel="noopener noreferrer" style={{ display: 'inline-block', marginTop: '2rem', color: 'var(--accent-gold)', textDecoration: 'none', borderBottom: '1px solid var(--accent-gold)', paddingBottom: '0.2rem', fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '2px', transition: 'opacity 0.3s' }} onMouseOver={(e) => e.currentTarget.style.opacity = '0.7'} onMouseOut={(e) => e.currentTarget.style.opacity = '1'}>
+                                        View on Instagram
+                                    </a>
+                                )}
                             </div>
                         </div>
                     </div>

@@ -38,7 +38,7 @@ export default function Navbar() {
             <div className="side-nav">
                 <Link href="/" className="side-nav-link" scroll={false}>HOME</Link>
                 <Link href="/atelier" className="side-nav-link" scroll={false}>STUDIO</Link>
-                <Link href="/exhibition" className="side-nav-link" scroll={false}>EXHIBITION</Link>
+                <Link href="/gallery" className="side-nav-link" scroll={false}>GALLERY</Link>
                 <Link href="/commission" className="side-nav-link" scroll={false}>CONTACT</Link>
             </div>
         </>

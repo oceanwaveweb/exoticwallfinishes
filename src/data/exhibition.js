@@ -1,83 +1,92 @@
 export const EXHIBITION_DATA = [
     {
         id: 1,
-        img: "/images/master_bedroomlvexotic2.jpg",
-        title: "Modern Sanctuary",
-        subtitle: "Multi-Color Lime Plasters with Liquid Metal",
-        description: "A breathtaking display of multi-layered lime plasters infused with liquid metallic pigments. This bespoke finish creates a sanctuary of light and texture, where the walls appear to shift and shimmer with the changing time of day.",
-        type: "large"
+        img: "/images/gallery-prominent/1.png",
+        title: "Venetian Gold",
+        subtitle: "Aesthetic Marmorino",
+        description: "A brilliant manifestation of Venetian plaster featuring a seamless blend of classic aesthetics and modern gold accents.",
+        type: "portrait",
+        link: "https://www.instagram.com/p/DDqH-pYM6xZ/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
     },
     {
         id: 2,
-        img: "/images/staircase_venetian_round.jpg",
-        title: "White Elegance",
-        subtitle: "White Venetian Plaster with Silver Pearl",
-        description: "A masterclass in minimalist luxury. This pure white Venetian plaster is enhanced with subtle silver pearl accents, providing a mirror-like depth that transforms functional spaces into works of architectural art.",
-        type: "portrait"
+        img: "/images/gallery-prominent/2.png",
+        title: "Textured Elegance",
+        subtitle: "Hand-troweled Perfection",
+        description: "Delivering unparalleled depth and character, this hand-troweled finish introduces dynamic shadows and a tactile experience.",
+        type: "square",
+        link: "https://www.instagram.com/p/DEswpQCyEa0/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
     },
     {
         id: 3,
-        img: "/images/portfolio_bathroom_1772916040233.mp4",
-        isVideo: true,
-        title: "Coarse Monolith",
-        subtitle: "Marmorino Charcoal with Black Lime Wash",
-        description: "A brutalist exploration of matter and shadow. This coarse Marmorino finish features deep charcoal tones and a heavy texture, punctuated by a dark lime wash that emphasizes the raw, tectonic power of the surface.",
-        type: "square"
+        img: "/images/gallery-prominent/3.png",
+        title: "Modern Minimalist",
+        subtitle: "Smooth Mineral Finish",
+        description: "A clean, uncompromised smooth mineral finish that perfectly complements contemporary architectural elements.",
+        type: "portrait",
+        link: "https://www.instagram.com/reel/DWp1LOFjZP2/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
     },
     {
         id: 4,
-        img: "/images/high_exotichall.jpg",
-        title: "Minimal Corridor",
-        subtitle: "Il Materico Matte Marmorino",
-        description: "High-traffic elegance that doesn't compromise on soul. This matte Marmorino finish provides a durable yet deeply tactile experience, perfect for long corridors where light and shadow play across its subtle mineral grains.",
-        type: "large"
+        img: "/images/gallery-prominent/4.png",
+        title: "Brutalist Charm",
+        subtitle: "Raw Concrete Aesthetic",
+        description: "An authentic, raw concrete-style plaster application that commands presence while remaining refined and elegant.",
+        type: "square",
+        link: "https://www.instagram.com/reel/DGzJCfBMki2/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
     },
     {
         id: 5,
-        img: "/images/bathroom_light.jpg",
-        title: "Sexy Matte",
-        subtitle: "Marmorino Walls in Soft Beige with Lime Wash",
-        description: "A soft, inviting take on industrial materials. These soft beige Marmorino walls provide a velvety backdrop that softens the harder edges of modern bathroom design, creating an atmosphere of quiet, organic warmth.",
-        type: "square"
+        img: "/images/gallery-prominent/5.png",
+        title: "Organic Movement",
+        subtitle: "Sweeping Lime Wash",
+        description: "Characterized by sweeping directional strokes, this lime wash technique brings organic movement and life to the walls.",
+        type: "portrait",
+        link: "https://www.instagram.com/reel/DIPi3o7s5Mt/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
     },
     {
         id: 6,
-        img: "/images/master_bedroomlvexotic.jpg",
-        title: "Master Sanctuary",
-        subtitle: "Deep Venetian Textures",
-        description: "An expansion of the Modern Sanctuary concept, focusing on deep, hand-troweled textures and a more intimate color palette. Every square inch represents a dialogue between the artisan's tool and the natural lime minerals.",
-        type: "portrait"
+        img: "/images/gallery-prominent/6.png",
+        title: "Dark Obsidian",
+        subtitle: "High-Gloss Black Plaster",
+        description: "A daring exploration of darkness. This highly polished black plaster creates a mirror-like finish that expands spatial perception.",
+        type: "square",
+        link: "https://www.instagram.com/reel/DXMjughgFvN/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
     },
     {
         id: 7,
-        img: "/images/highrise_corpo.jpg",
-        title: "Corporate Brutalism",
-        subtitle: "Matte Marmorino in Gray Lime Plaster",
-        description: "Bringing the warmth of artisan materials to corporate environments. This gray lime plaster balanced with a matte finish provides a monolithic, stone-like appearance that commands respect while feeling approachable.",
-        type: "square"
+        img: "/images/gallery-prominent/7.png",
+        title: "Earthy Warmth",
+        subtitle: "Terracotta Infused Marmorino",
+        description: "Infused with rich, warm terracotta hues, this finish evokes the timeless comfort of Mediterranean villas and artisan craftsmanship.",
+        type: "portrait",
+        link: "https://www.instagram.com/reel/DW6wnmKDBos/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
     },
     {
         id: 8,
-        img: "/images/obsidian_wall.jpg",
-        title: "Architectural Flow",
-        subtitle: "Shiny Black Venetian Plaster Accent Wall",
-        description: "A dramatic architectural statement. This 'Obsidian' wall utilizes a high-gloss black Venetian plaster that reflects the entire room, acting as both a surface and a spatial expander with its mirror-like properties.",
-        type: "large"
+        img: "/images/gallery-prominent/8.png",
+        title: "Pearl Shimmer",
+        subtitle: "Luminous Venetian Finish",
+        description: "Incorporating subtle pearl aggregates, this finish catches and scatters ambient light, giving the room an ethereal glow.",
+        type: "square",
+        link: "https://www.instagram.com/reel/DXF7bNXDhph/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
     },
     {
         id: 9,
-        img: "/images/white_bedroom_venetian2.jpg",
-        title: "Grey Comfort",
-        subtitle: "Soft Matte Gray Venetian Plaster Marmorino Sand",
-        description: "A perfect balance of Venetian smoothness and Marmorino grit. This soft gray finish includes fine sand aggregates that catch the light in a subtle, non-reflective way, providing a modern and comfortable aesthetic.",
-        type: "square"
+        img: "/images/gallery-prominent/9.png",
+        title: "Industrial Chic",
+        subtitle: "Distressed Plaster Effect",
+        description: "A meticulously distressed application that adds instant history and narrative to modern industrial or loft spaces.",
+        type: "portrait",
+        link: "https://www.instagram.com/reel/DWwWMq-kQbu/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
     },
     {
         id: 10,
-        img: "/images/bathroom_black.jpg",
-        title: "Deep Bling",
-        subtitle: "Black Shiny Venetian Plaster Marmorino",
-        description: "Luxurious, dark, and unapologetically bold. This finish combines the deepest black pigments with a high-shine polish and subtle sparkling minerals, reminiscent of rare volcanic stone polished to a gem-like finish.",
-        type: "square"
+        img: "/images/gallery-prominent/10.png",
+        title: "Timeless Stucco",
+        subtitle: "Classic Italian Plaster",
+        description: "The quintessential Italian stucco experience, offering a perfectly honed surface with delicate tonal variations and immense depth.",
+        type: "square",
+        link: "https://www.instagram.com/reel/DWmI_YlDIyj/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
     }
 ];

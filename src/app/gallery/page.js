@@ -83,7 +83,7 @@ export default function ExhibitionPage() {
                     <div className="sticky-container">
                         <div ref={headingRef} className="exhibition-title-area" style={{ position: 'relative', top: 'auto', width: '100%', paddingTop: '8rem', paddingBottom: '10rem' }}>
                             <div className="exhibition-heading">
-                                <span className="exhibition-overline exhibit-word">Exhibition</span>
+                                <span className="exhibition-overline exhibit-word">Gallery</span>
                                 <h1 className="exhibition-main-title">
                                     <span className="exhibit-word" style={{ display: 'inline-block' }}>EXOTIC</span>{' '}
                                     <br className="mobile-br" />
@@ -131,11 +131,16 @@ export default function ExhibitionPage() {
                                         )}
                                     </div>
                                     <div className="modal-text-area">
-                                        <span className="modal-overline">Exhibition Detail</span>
+                                        <span className="modal-overline">Gallery Detail</span>
                                         <h2 className="modal-title">{selectedItem.title}</h2>
                                         <p className="modal-subtitle">{selectedItem.subtitle}</p>
                                         <div className="modal-divider"></div>
                                         <p className="modal-description">{selectedItem.description}</p>
+                                        {selectedItem.link && (
+                                            <a href={selectedItem.link} target="_blank" rel="noopener noreferrer" style={{ display: 'inline-block', marginTop: '2rem', color: 'var(--accent-gold)', textDecoration: 'none', borderBottom: '1px solid var(--accent-gold)', paddingBottom: '0.2rem', fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '2px', transition: 'opacity 0.3s' }} onMouseOver={(e) => e.currentTarget.style.opacity = '0.7'} onMouseOut={(e) => e.currentTarget.style.opacity = '1'}>
+                                                View on Instagram
+                                            </a>
+                                        )}
                                     </div>
                                 </div>
                             </div>
@@ -236,8 +241,55 @@ export default function ExhibitionPage() {
                     </div>
                 </section>
 
+                {/* --- YouTube Promo Section --- */}
+                <section className="youtube-promo-section reveals fade-in-up">
+                    {/* Background Marquee */}
+                    <div className="yt-marquee-bg">
+                        <div className="yt-marquee-track">
+                            {/* Set 1 */}
+                            <div className="yt-marquee-item"><img src="/images/artisan_trowel_cinematic.jpg" alt="Exotic Masterclass Snippet" /></div>
+                            <div className="yt-marquee-item"><img src="/images/high_exotichall.jpg" alt="Exotic Masterclass Snippet" /></div>
+                            <div className="yt-marquee-item"><img src="/images/master_bedroomlvexotic.jpg" alt="Exotic Masterclass Snippet" /></div>
+                            <div className="yt-marquee-item"><img src="/images/Exhibition 3rd card.jpg" alt="Exotic Masterclass Snippet" /></div>
+                            <div className="yt-marquee-item"><img src="/images/venetian_plaster_wall.jpg" alt="Exotic Masterclass Snippet" /></div>
+                            <div className="yt-marquee-item"><img src="/images/white_bedroom_venetian2.jpg" alt="Exotic Masterclass Snippet" /></div>
+                            
+                            {/* Duplicate for infinite scroll */}
+                            <div className="yt-marquee-item"><img src="/images/artisan_trowel_cinematic.jpg" alt="Exotic Masterclass Snippet" /></div>
+                            <div className="yt-marquee-item"><img src="/images/high_exotichall.jpg" alt="Exotic Masterclass Snippet" /></div>
+                            <div className="yt-marquee-item"><img src="/images/master_bedroomlvexotic.jpg" alt="Exotic Masterclass Snippet" /></div>
+                            <div className="yt-marquee-item"><img src="/images/Exhibition 3rd card.jpg" alt="Exotic Masterclass Snippet" /></div>
+                            <div className="yt-marquee-item"><img src="/images/venetian_plaster_wall.jpg" alt="Exotic Masterclass Snippet" /></div>
+                            <div className="yt-marquee-item"><img src="/images/white_bedroom_venetian2.jpg" alt="Exotic Masterclass Snippet" /></div>
+                        </div>
+                    </div>
+                    
+                    {/* Contrast Overlay & Glow */}
+                    <div className="yt-contrast-overlay"></div>
+                    <div className="yt-glow-bg" style={{ zIndex: 1 }}></div>
+
+                    <div className="yt-promo-container">
+                        <a href="https://www.youtube.com/@venetianplasterexoticwallf5313/videos" target="_blank" rel="noopener noreferrer" className="yt-icon-wrapper">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M8 5v14l11-7z" />
+                            </svg>
+                        </a>
+                        <span className="yt-overline">The Masterclass</span>
+                        <h2 className="yt-title">PROCESS & <span>TECHNIQUE</span></h2>
+                        <p className="yt-desc">
+                            Step inside the Exotic studio. Witness the meticulous process of hand-troweled Venetian Plaster and discover the secrets behind our most captivating finishes.
+                        </p>
+                        <a href="https://www.youtube.com/@venetianplasterexoticwallf5313/videos" target="_blank" rel="noopener noreferrer" className="btn-youtube">
+                            Watch on YouTube
+                            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" style={{ marginLeft: '4px' }}>
+                                <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </section>
+
                 {/* --- Instagram Section --- */}
-                <section className="instagram-section reveals fade-in-up">
+                <section className="instagram-section">
                     {/* Live Instagram Feed */}
                     <InstagramFeed username="exoticwallfinishes" limit={6} />
                 </section>

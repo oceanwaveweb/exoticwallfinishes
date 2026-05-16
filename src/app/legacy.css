@@ -645,6 +645,27 @@ body {
     }
 }
 
+@media (max-width: 768px) {
+    .contact-details-container {
+        max-width: 100%;
+        gap: 5rem;
+    }
+
+    .appointment-card-wrapper {
+        width: 100%;
+    }
+
+    .appointment-card {
+        padding: 2rem 1.5rem;
+        border-radius: 12px;
+    }
+
+    .contact-parallax-section .container {
+        padding: 0 1.25rem;
+        max-width: 100%;
+    }
+}
+
 /* --- Artisan Bio Typography --- */
 .bio-lead {
     font-family: var(--font-sans);
@@ -2218,6 +2239,14 @@ footer {
 
     .display-title {
         margin-bottom: 1.25rem;
+    }
+
+    /* Larger headings on mobile for the three Studio section titles */
+    .atelier .display-title,
+    .heritage-section .display-title,
+    .vision-text-card .display-title {
+        font-size: clamp(4rem, 18vw, 6rem);
+        padding: 1.5rem 0;
     }
 
     .bio-lead {

@@ -64,7 +64,6 @@ export default function ExhibitionPage() {
                     }
                 );
             });
-            ScrollTrigger.refresh();
         });
 
         return () => {

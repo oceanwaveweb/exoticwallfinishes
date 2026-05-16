@@ -2471,7 +2471,7 @@ footer {
     line-height: 1;
     text-indent: 0.3em;
     /* Balance the letter-spacing */
-    text-shadow: 
+    text-shadow:
         0 0 15px rgba(255, 255, 255, 0.5),
         0 0 30px rgba(255, 255, 255, 0.3),
         0 0 45px rgba(255, 255, 255, 0.1);
@@ -2489,7 +2489,7 @@ footer {
         letter-spacing: 0.15em;
         text-indent: 0.15em;
         white-space: nowrap;
-        text-shadow: 
+        text-shadow:
             0 0 12px rgba(255, 255, 255, 0.5),
             0 0 25px rgba(255, 255, 255, 0.3);
         color: #fff;
@@ -2678,8 +2678,9 @@ footer {
 }
 
 @media (max-width: 768px) {
-    .gallery-item, 
-    .gallery-item.featured-item, 
+
+    .gallery-item,
+    .gallery-item.featured-item,
     .gallery-item:last-child,
     .gallery-item.margin-huge {
         margin-bottom: 5rem !important;
@@ -2740,7 +2741,8 @@ footer {
     color: #ff0000;
     width: 32px;
     height: 32px;
-    margin-left: 4px; /* Optical alignment for play button */
+    margin-left: 4px;
+    /* Optical alignment for play button */
     transition: color 0.4s ease;
 }
 
@@ -2825,7 +2827,8 @@ footer {
     z-index: 0;
     display: flex;
     overflow: hidden;
-    opacity: 0.15; /* High end subtlety */
+    opacity: 0.15;
+    /* High end subtlety */
     pointer-events: none;
     mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
     -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
@@ -2833,7 +2836,8 @@ footer {
 
 .yt-marquee-track {
     display: flex;
-    gap: 1.5rem; /* Gap between images */
+    gap: 1.5rem;
+    /* Gap between images */
     padding-left: 1.5rem;
     animation: scroll-left 35s linear infinite;
     will-change: transform;
@@ -2842,8 +2846,10 @@ footer {
 .yt-marquee-item {
     flex-shrink: 0;
     width: clamp(250px, 20vw, 350px);
-    aspect-ratio: 16/9; /* YouTube video ratio */
-    border-radius: 6px; /* Modern minimal radius */
+    aspect-ratio: 16/9;
+    /* YouTube video ratio */
+    border-radius: 6px;
+    /* Modern minimal radius */
     overflow: hidden;
     position: relative;
     border: 1px solid rgba(255, 255, 255, 0.05);
@@ -2853,7 +2859,8 @@ footer {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    filter: grayscale(100%) contrast(1.1); /* Monochromatic high-end look */
+    filter: grayscale(100%) contrast(1.1);
+    /* Monochromatic high-end look */
 }
 
 /* Contrast Overlay */
@@ -2864,7 +2871,8 @@ footer {
     width: 100%;
     height: 100%;
     background: radial-gradient(circle at center, rgba(2, 2, 2, 0.6) 0%, rgba(2, 2, 2, 0.95) 70%);
-    z-index: 1; /* Above marquee, below text */
+    z-index: 1;
+    /* Above marquee, below text */
     pointer-events: none;
 }
 
@@ -2872,7 +2880,9 @@ footer {
     0% {
         transform: translateX(0);
     }
+
     100% {
-        transform: translateX(calc(-50% - 0.75rem)); /* Half the track minus half gap */
+        transform: translateX(calc(-50% - 0.75rem));
+        /* Half the track minus half gap */
     }
 }

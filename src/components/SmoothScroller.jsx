@@ -9,107 +9,94 @@ export default function SmoothScroller({ children }) {
     const contentRef = useRef(null);
     const pathname = usePathname();
     const smootherRef = useRef(null);
+    const gsapRef = useRef(null);
+    const STRef = useRef(null);
 
-    // ONE-TIME INITIALIZATION
+    // ONE-TIME: Load GSAP plugins
     useIsomorphicLayoutEffect(() => {
-        let ro;
+        window.history.scrollRestoration = 'manual';
 
         Promise.all([
             import('gsap'),
             import('gsap/ScrollTrigger'),
-            import('gsap/ScrollSmoother')
+            import('gsap/ScrollSmoother'),
         ]).then(([gsapModule, stModule, ssModule]) => {
             const gsap = gsapModule.default;
             const ScrollTrigger = stModule.ScrollTrigger;
             const ScrollSmoother = ssModule.ScrollSmoother;
-            
+
             gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
-            ScrollTrigger.clearScrollMemory("manual");
-            window.history.scrollRestoration = "manual";
+            gsapRef.current = gsap;
+            STRef.current = ScrollTrigger;
 
-            if (wrapperRef.current && contentRef.current && !smootherRef.current) {
-                // Initialize the core ScrollSmoother instance ONCE
-                smootherRef.current = ScrollSmoother.create({
-                    wrapper: wrapperRef.current,
-                    content: contentRef.current,
-                    smooth: 1.2, // Reduced from 1.5 for a snappier, more responsive feel
-                    effects: true,
-                    smoothTouch: 0.1
-                });
-
-                ro = new ResizeObserver(() => {
-                    ScrollTrigger.refresh();
-                });
-                ro.observe(contentRef.current);
-                wrapperRef.current._ro = ro;
-            }
+            // Create smoother on initial load
+            createSmoother(ScrollSmoother, ScrollTrigger);
         });
 
         return () => {
-            if (wrapperRef.current && wrapperRef.current._ro) {
-                wrapperRef.current._ro.disconnect();
-            }
-            if (smootherRef.current) {
-                smootherRef.current.kill();
-                smootherRef.current = null;
-            }
+            destroySmoother();
         };
-    }, []); 
+    }, []);
 
-    // RUNS SYNCHRONOUSLY ON EVERY ROUTE CHANGE BEFORE NEXT PAINT
+    function createSmoother(ScrollSmoother, ScrollTrigger) {
+        if (!wrapperRef.current || !contentRef.current) return;
+        if (smootherRef.current) return; // Already exists
+
+        smootherRef.current = ScrollSmoother.create({
+            wrapper: wrapperRef.current,
+            content: contentRef.current,
+            smooth: 1.2,
+            effects: true,
+            smoothTouch: 0.1,
+        });
+    }
+
+    function destroySmoother() {
+        if (smootherRef.current) {
+            smootherRef.current.kill();
+            smootherRef.current = null;
+        }
+    }
+
+    // ON EVERY ROUTE CHANGE: kill everything, reset, recreate
     useIsomorphicLayoutEffect(() => {
-        // 1. Force native and GSAP scroll to 0 immediately
-        const forceReset = () => {
-            if (typeof window === 'undefined') return;
+        if (typeof window === 'undefined') return;
 
-            // Reset native scroll
-            window.history.scrollRestoration = "manual";
+        // Immediately prevent any browser scroll restoration
+        window.history.scrollRestoration = 'manual';
+        window.scrollTo(0, 0);
+        document.documentElement.scrollTop = 0;
+        document.body.scrollTop = 0;
+
+        if (!gsapRef.current || !STRef.current) return;
+
+        const ScrollTrigger = STRef.current;
+
+        // Kill ALL ScrollTrigger instances — this is essential because pinned
+        // sections (like ScrollSequence) leave stale pins that cause the
+        // "crazy scroll" as GSAP tries to reconcile old positions with new content
+        ScrollTrigger.getAll().forEach(t => t.kill());
+        ScrollTrigger.clearScrollMemory('manual');
+
+        // Kill and immediately recreate the smoother at position 0
+        destroySmoother();
+        window.scrollTo(0, 0);
+
+        // Small delay to let Next.js render the new page content into the DOM
+        // before we create a fresh smoother against the new page height
+        const timer = setTimeout(async () => {
             window.scrollTo(0, 0);
 
-            // Reset GSAP Smoother
-            if (smootherRef.current) {
-                smootherRef.current.scrollTop(0, true);
-                smootherRef.current.paused(true); // Temporarily pause to prevent "catching" old scroll
-                setTimeout(() => {
-                    if (smootherRef.current) smootherRef.current.paused(false);
-                }, 100);
-            }
+            const { ScrollSmoother } = await import('gsap/ScrollSmoother');
+            createSmoother(ScrollSmoother, ScrollTrigger);
 
-            // Reset ScrollTrigger memory
-            if (typeof window !== 'undefined' && window.ScrollTrigger) {
-                window.ScrollTrigger.clearScrollMemory("manual");
-            }
-        };
-
-        // Initial immediate reset
-        forceReset();
-
-        // 2. Perform a multi-stage reset sequence to fight Next.js and browser restoration
-        Promise.all([
-            import('gsap'),
-            import('gsap/ScrollTrigger')
-        ]).then(([gsapModule, stModule]) => {
-            const gsap = gsapModule.default;
-            const ScrollTrigger = stModule.ScrollTrigger;
-
-            // Execute reset sequence at critical stages
-            forceReset();
-            ScrollTrigger.refresh();
-
-            // Next.js often restores scroll after a micro-task or the next few frames
-            const retryReset = () => {
-                forceReset();
+            // One clean refresh after smoother is ready
+            requestAnimationFrame(() => {
                 ScrollTrigger.refresh();
-            };
+            });
+        }, 80);
 
-            // Sequence of resets to cover various completion states
-            const intervals = [50, 150, 400, 800];
-            intervals.forEach(ms => setTimeout(retryReset, ms));
-        });
-
-        return () => {
-            if (smootherRef.current) smootherRef.current.paused(false);
-        };
+        return () => clearTimeout(timer);
     }, [pathname]);
 
     return (

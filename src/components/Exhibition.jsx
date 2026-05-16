@@ -45,7 +45,6 @@ export default function Exhibition() {
 
                 // Note: Sticky pinning removed as per request
             });
-            ScrollTrigger.refresh();
         });
 
         return () => {

@@ -1,7 +1,29 @@
-import { Ghost, Music, Twitter, Disc, Youtube, Facebook, Instagram, Mail } from 'lucide-react';
+'use client';
+import { Youtube, Facebook, Instagram } from 'lucide-react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 export default function Navbar() {
+    const pathname = usePathname();
+
+    const handleNavClick = (e, href) => {
+        // If already on this page, scroll to top instead of navigating
+        if (pathname === href) {
+            e.preventDefault();
+            // Use GSAP ScrollSmoother if available, otherwise native scroll
+            import('gsap/ScrollSmoother').then(({ ScrollSmoother }) => {
+                const smoother = ScrollSmoother.get();
+                if (smoother) {
+                    smoother.scrollTo(0, true);
+                } else {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+            }).catch(() => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        }
+    };
+
     return (
         <>
             <nav className="navbar">
@@ -36,10 +58,10 @@ export default function Navbar() {
             </nav>
 
             <div className="side-nav">
-                <Link href="/" className="side-nav-link" scroll={false}>HOME</Link>
-                <Link href="/atelier" className="side-nav-link" scroll={false}>STUDIO</Link>
-                <Link href="/gallery" className="side-nav-link" scroll={false}>GALLERY</Link>
-                <Link href="/commission" className="side-nav-link" scroll={false}>CONTACT</Link>
+                <Link href="/" className="side-nav-link" scroll={false} onClick={e => handleNavClick(e, '/')}>HOME</Link>
+                <Link href="/atelier" className="side-nav-link" scroll={false} onClick={e => handleNavClick(e, '/atelier')}>STUDIO</Link>
+                <Link href="/gallery" className="side-nav-link" scroll={false} onClick={e => handleNavClick(e, '/gallery')}>GALLERY</Link>
+                <Link href="/commission" className="side-nav-link" scroll={false} onClick={e => handleNavClick(e, '/commission')}>CONTACT</Link>
             </div>
         </>
     );

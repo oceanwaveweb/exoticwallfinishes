@@ -6,7 +6,7 @@ export default function Footer() {
                     <div className="logo-pair" style={{ display: 'flex', alignItems: 'center', gap: '2rem' }}>
                         <img src="/images/Footer_WFD.png" alt="Exotic Wall Finishes" className="brand-img-footer" />
                         <a href="https://exoticluxuryline.com/" target="_blank" rel="noopener noreferrer" style={{ display: 'block' }}>
-                            <img src="/images/Footer_WFD.png" alt="Exotic Wall Finishes" className="brand-img-footer" />
+                            <img src="/images/Exotic Luxury Line Brand Logo.png" alt="Exotic Luxury Line" className="brand-img-footer" />
                         </a>
                     </div>
                 </div>

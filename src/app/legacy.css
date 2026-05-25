@@ -83,12 +83,12 @@ body {
     justify-content: space-between;
     align-items: center;
     z-index: 100;
-    mix-blend-mode: difference;
 }
 
 .logo {
     display: flex;
     align-items: center;
+    mix-blend-mode: difference;
 }
 
 .brand-img {
@@ -115,13 +115,23 @@ body {
 }
 
 .social-icon {
-    color: #fff;
+    color: #fff !important;
     transition: var(--transition-fast);
 }
 
+.social-icon svg {
+    color: #fff !important;
+    stroke: #fff !important;
+}
+
 .social-icon:hover {
-    color: var(--accent-gold);
+    color: var(--accent-gold) !important;
     transform: translateY(-2px);
+}
+
+.social-icon:hover svg {
+    color: var(--accent-gold) !important;
+    stroke: var(--accent-gold) !important;
 }
 
 /* --- Right Side Vertical Navigation --- */
@@ -2285,17 +2295,26 @@ footer {
         height: 36px;
         border-radius: 50%;
         background: rgba(255, 255, 255, 0.05);
+        color: #fff !important;
         transition: background 0.3s var(--ease), color 0.3s var(--ease), transform 0.3s var(--ease);
     }
 
     .social-icon:hover {
         background: rgba(212, 175, 55, 0.15);
+        color: var(--accent-gold) !important;
         transform: translateY(-2px);
     }
 
     .social-icon svg {
         width: 20px;
         height: 20px;
+        color: #fff !important;
+        stroke: #fff !important;
+    }
+
+    .social-icon:hover svg {
+        color: var(--accent-gold) !important;
+        stroke: var(--accent-gold) !important;
     }
 
     .side-nav {

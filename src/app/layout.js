@@ -2,8 +2,31 @@ import './globals.css'
 import './legacy.css'
 
 export const metadata = {
+    metadataBase: new URL('https://www.exoticwallfinishes.com'),
     title: 'G.C. | Exotic Architectural Surfaces',
-    description: 'Avant-garde bespoke Venetian plaster wall finishes by master artisan Gian Carlo Sagasti.',
+    description: 'Avant-garde bespoke Venetian plaster wall finishes by master artisan Gian Carlo Sagasti. Based in Miami, Florida.',
+    openGraph: {
+        title: 'Exotic Wall Finishes & Design | Miami, Florida',
+        description: 'Bespoke Venetian plaster, Marmorino, Lime Paint & decorative wall finishes by master artisan Gian Carlo Sagasti.',
+        url: 'https://www.exoticwallfinishes.com',
+        siteName: 'Exotic Wall Finishes & Design',
+        images: [
+            {
+                url: '/og-image.png',
+                width: 1200,
+                height: 630,
+                alt: 'Exotic Wall Finishes — Venetian Plaster by Gian Carlo Sagasti',
+            },
+        ],
+        locale: 'en_US',
+        type: 'website',
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: 'Exotic Wall Finishes & Design | Miami, Florida',
+        description: 'Bespoke Venetian plaster, Marmorino, Lime Paint & decorative wall finishes by master artisan Gian Carlo Sagasti.',
+        images: ['/og-image.png'],
+    },
 }
 
 import Navbar from '@/components/Navbar';

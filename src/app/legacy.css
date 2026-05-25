@@ -83,27 +83,27 @@ body {
     justify-content: space-between;
     align-items: center;
     z-index: 100;
+    mix-blend-mode: difference;
 }
 
 .logo {
     display: flex;
     align-items: center;
-    mix-blend-mode: difference;
 }
 
 .brand-img {
     height: auto;
-    max-height: 20px;
+    max-height: 28px;
     /* Larger on mobile devices */
-    max-width: 140px;
+    max-width: 170px;
     object-fit: contain;
     opacity: 0.9;
 }
 
 @media (min-width: 768px) {
     .brand-img {
-        max-height: 38px;
-        max-width: 220px;
+        max-height: 32px;
+        max-width: 190px;
     }
 }
 
@@ -2284,15 +2284,15 @@ footer {
     }
 
     .top-socials {
-        gap: 1.25rem;
+        gap: 1rem;
     }
 
     .social-icon {
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 36px;
-        height: 36px;
+        width: 30px;
+        height: 30px;
         border-radius: 50%;
         background: rgba(255, 255, 255, 0.05);
         color: #fff !important;
@@ -2306,8 +2306,8 @@ footer {
     }
 
     .social-icon svg {
-        width: 20px;
-        height: 20px;
+        width: 16px;
+        height: 16px;
         color: #fff !important;
         stroke: #fff !important;
     }

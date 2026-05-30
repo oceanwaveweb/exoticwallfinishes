@@ -43,6 +43,7 @@ export default function RootLayout({ children }) {
                     href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Inter:wght@300;400&family=Pinyon+Script&family=Luxurious+Script&display=swap"
                     rel="stylesheet"
                 />
+                <script async src="https://profiles.oceanwaveweb.com/ow-analytics.js" data-ow-site="owpk_3ab2f0ed9269ce99bd7f16b0aa724cd50c97" data-ow-endpoint="https://profiles.oceanwaveweb.com/_a"></script>
             </head>
             <body suppressHydrationWarning>
 

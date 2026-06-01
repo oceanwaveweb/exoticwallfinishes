@@ -59,7 +59,7 @@ export default function Exhibition() {
                 <div ref={headingRef} className="exhibition-title-area" style={{ position: 'relative', top: 'auto', width: '100%' }}>
                     <div className="exhibition-heading">
                         <span className="exhibition-overline exhibit-word">02 / Gallery</span>
-                        <h2 className="exhibition-main-title">
+                        <h2 className="exhibition-main-title exhibition-cinematic-title">
                             <span className="exhibit-word" style={{ display: 'inline-block' }}>EXOTIC</span>{' '}
                             <br className="mobile-br" />
                             <span className="exhibit-word" style={{ display: 'inline-block' }}>WORKS</span>
@@ -95,9 +95,9 @@ export default function Exhibition() {
                         <div className="cta-content">
                             <span className="cta-overline">03 / The Collection</span>
                             <h3 className="cta-title">EXPLORE ALL <br />EXOTIC WORKS</h3>
-                            <Link href="/gallery" className="cta-button-link">
+                            <Link href="/gallery" id="view-our-work" className="cta-button-link view-our-work">
                                 <div className="cta-action">
-                                    <span>Discover More</span>
+                                    <span>View Our Work</span>
                                     <ArrowRight className="cta-icon" size={20} />
                                 </div>
                             </Link>
@@ -126,8 +126,8 @@ export default function Exhibition() {
                                 <div className="modal-divider"></div>
                                 <p className="modal-description">{selectedItem.description}</p>
                                 {selectedItem.link && (
-                                    <a href={selectedItem.link} target="_blank" rel="noopener noreferrer" style={{ display: 'inline-block', marginTop: '2rem', color: 'var(--accent-gold)', textDecoration: 'none', borderBottom: '1px solid var(--accent-gold)', paddingBottom: '0.2rem', fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '2px', transition: 'opacity 0.3s' }} onMouseOver={(e) => e.currentTarget.style.opacity = '0.7'} onMouseOut={(e) => e.currentTarget.style.opacity = '1'}>
-                                        View on Instagram
+                                    <a href={selectedItem.link} target="_blank" rel="noopener noreferrer" id="view-featured-finish-on-instagram" className="view-featured-finish-on-instagram" style={{ display: 'inline-block', marginTop: '2rem', color: 'var(--accent-gold)', textDecoration: 'none', borderBottom: '1px solid var(--accent-gold)', paddingBottom: '0.2rem', fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '2px', transition: 'opacity 0.3s' }} onMouseOver={(e) => e.currentTarget.style.opacity = '0.7'} onMouseOut={(e) => e.currentTarget.style.opacity = '1'}>
+                                        View Featured Finish on Instagram
                                     </a>
                                 )}
                             </div>

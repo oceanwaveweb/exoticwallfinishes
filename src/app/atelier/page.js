@@ -84,7 +84,7 @@ export default function AtelierPage() {
             <section className="atelier-hero reveals fade-in-up">
                 <div className="container">
                     <span className="overline">The Exotic</span>
-                    <h1 className="display-title">STUDIO</h1>
+                    <h1 className="display-title studio-cinematic-title">STUDIO</h1>
                 </div>
             </section>
 
@@ -93,7 +93,7 @@ export default function AtelierPage() {
                 <div className="container layout-offset">
                     <div className="text-block reveals slide-in-left">
                         <span className="overline">01 / The Artisan</span>
-                        <h2 className="display-title">Gian Carlo<br />Sagasti</h2>
+                        <h2 className="display-title artisan-cinematic-title"><span className="artisan-name-line">Gian Carlo</span><span className="artisan-surname-line">Sagasti</span></h2>
                         <p className="bio-lead">
                             Gian Carlo Sagasti, founder and visionary of Exotic Wall Finishes & Design, established in Miami, Florida since 2015.
                         </p>
@@ -128,7 +128,7 @@ export default function AtelierPage() {
                 <div className="vision-container">
                     <div className="vision-text-card reveals slide-in-left">
                         <span className="overline" style={{ color: 'var(--accent-gold)' }}>02 / The Vision</span>
-                        <h2 className="display-title" style={{ marginTop: '1rem', marginBottom: '2.5rem' }}>Exotic Wall<br />Finishes</h2>
+                        <h2 className="display-title vision-professional-title" style={{ marginTop: '1rem', marginBottom: '2.5rem' }}><span className="vision-title-line">Exotic Wall</span><span className="vision-title-line">Finishes</span></h2>
 
                         <blockquote className="motto-quote" style={{ borderLeft: '2px solid var(--accent-gold)', paddingLeft: '1.5rem', marginLeft: '0' }}>
                             “Bringing Walls to Life”
@@ -167,7 +167,7 @@ export default function AtelierPage() {
                 <div className="container layout-offset">
                     <div className="text-block">
                         <span className="overline">03 / The Heritage</span>
-                        <h2 className="display-title">Marmorino<br />Tools</h2>
+                        <h2 className="display-title heritage-professional-title"><span className="heritage-title-line">Marmorino</span><span className="heritage-title-line">Tools</span></h2>
                         <p className="bio-lead" style={{ marginTop: '1rem' }}>
                             A partnership forged in the mastery of authentic Italian decorative arts.
                         </p>

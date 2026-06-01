@@ -83,7 +83,7 @@ export default function ExhibitionPage() {
                         <div ref={headingRef} className="exhibition-title-area" style={{ position: 'relative', top: 'auto', width: '100%', paddingTop: '8rem', paddingBottom: '10rem' }}>
                             <div className="exhibition-heading">
                                 <span className="exhibition-overline exhibit-word">Gallery</span>
-                                <h1 className="exhibition-main-title">
+                                <h1 className="exhibition-main-title exhibition-cinematic-title">
                                     <span className="exhibit-word" style={{ display: 'inline-block' }}>EXOTIC</span>{' '}
                                     <br className="mobile-br" />
                                     <span className="exhibit-word" style={{ display: 'inline-block' }}>WORKS</span>
@@ -136,8 +136,8 @@ export default function ExhibitionPage() {
                                         <div className="modal-divider"></div>
                                         <p className="modal-description">{selectedItem.description}</p>
                                         {selectedItem.link && (
-                                            <a href={selectedItem.link} target="_blank" rel="noopener noreferrer" style={{ display: 'inline-block', marginTop: '2rem', color: 'var(--accent-gold)', textDecoration: 'none', borderBottom: '1px solid var(--accent-gold)', paddingBottom: '0.2rem', fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '2px', transition: 'opacity 0.3s' }} onMouseOver={(e) => e.currentTarget.style.opacity = '0.7'} onMouseOut={(e) => e.currentTarget.style.opacity = '1'}>
-                                                View on Instagram
+                                            <a href={selectedItem.link} target="_blank" rel="noopener noreferrer" id="view-selected-finish-on-instagram" className="view-selected-finish-on-instagram" style={{ display: 'inline-block', marginTop: '2rem', color: 'var(--accent-gold)', textDecoration: 'none', borderBottom: '1px solid var(--accent-gold)', paddingBottom: '0.2rem', fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '2px', transition: 'opacity 0.3s' }} onMouseOver={(e) => e.currentTarget.style.opacity = '0.7'} onMouseOut={(e) => e.currentTarget.style.opacity = '1'}>
+                                                View Selected Finish on Instagram
                                             </a>
                                         )}
                                     </div>
@@ -278,8 +278,8 @@ export default function ExhibitionPage() {
                         <p className="yt-desc">
                             Step inside the Exotic studio. Witness the meticulous process of hand-troweled Venetian Plaster and discover the secrets behind our most captivating finishes.
                         </p>
-                        <a href="https://www.youtube.com/@venetianplasterexoticwallf5313/videos" target="_blank" rel="noopener noreferrer" className="btn-youtube">
-                            Watch on YouTube
+                        <a href="https://www.youtube.com/@venetianplasterexoticwallf5313/videos" target="_blank" rel="noopener noreferrer" id="watch-plaster-techniques-on-youtube" className="btn-youtube watch-plaster-techniques-on-youtube">
+                            Watch Plaster Techniques on YouTube
                             <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" style={{ marginLeft: '4px' }}>
                                 <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
                             </svg>

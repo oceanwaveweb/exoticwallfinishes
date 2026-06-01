@@ -54,8 +54,8 @@ export default function CommissionPage() {
                     <div className="container">
                         <div className="contact-hero-header" style={{ marginBottom: '6rem', textAlign: 'center', width: '100%' }}>
                             <span className="contact-overline stagger-text" style={{ display: 'inline-block', margin: '0 auto 1rem' }}>Contact</span>
-                            <h1 className="large-lead stagger-text" style={{ fontSize: 'clamp(3rem, 6.5vw, 6rem)', textShadow: '0 0 30px rgba(255, 255, 255, 0.5), 0 0 60px rgba(255, 255, 255, 0.2)' }}>
-                                Let's Build Your Vision
+                            <h1 className="large-lead commission-cinematic-title stagger-text">
+                                Let&apos;s Build Your Vision
                             </h1>
                         </div>
 
@@ -91,7 +91,7 @@ export default function CommissionPage() {
                                             <textarea id="message" placeholder=" " rows="3" required style={{ minHeight: '120px' }}></textarea>
                                             <label htmlFor="message">Project Details</label>
                                         </div>
-                                        <button type="submit" className="brutal-btn" style={{ width: '100%', marginTop: '1rem' }}>Send Message</button>
+                                        <button type="submit" id="request-a-quote" className="brutal-btn request-a-quote" style={{ width: '100%', marginTop: '1rem' }}>Request a Quote</button>
                                     </form>
                                 </div>
                             </div>

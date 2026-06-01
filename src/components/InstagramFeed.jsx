@@ -63,7 +63,8 @@ export default function InstagramFeed() {
           href="https://www.instagram.com/exoticwallfinishes/" 
           target="_blank" 
           rel="noopener noreferrer" 
-          className="btn-premium"
+          id="follow-exoticwallfinishes"
+          className="btn-premium follow-exoticwallfinishes"
           style={{ 
             padding: '1rem 2.5rem', 
             border: '1px solid rgba(255,255,255,0.2)', 

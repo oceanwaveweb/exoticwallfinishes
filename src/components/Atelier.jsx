@@ -4,7 +4,7 @@ export default function Atelier() {
             <div className="container layout-offset">
                 <div className="text-block reveals slide-in-left">
                     <span className="overline">01 / The Artisan</span>
-                    <h2 className="display-title">Gian Carlo<br />Sagasti</h2>
+                    <h2 className="display-title artisan-cinematic-title"><span className="artisan-name-line">Gian Carlo</span><span className="artisan-surname-line">Sagasti</span></h2>
                     <p className="bio-lead">
                         Gian Carlo Sagasti, founder and visionary of Exotic Wall Finishes & Design, established in Miami, Florida since 2015.
                     </p>

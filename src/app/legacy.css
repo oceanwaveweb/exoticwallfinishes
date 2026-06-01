@@ -2950,3 +2950,384 @@ footer {
         /* Half the track minus half gap */
     }
 }
+
+/* ============================================================
+   FEATURED VIDEO SECTION — Centered Redesign
+   ============================================================ */
+.featured-video-section {
+    background: #020202;
+    padding: 9rem 0 10rem;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+
+/* Faint ambient noise-like gradient behind the section */
+.featured-video-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(ellipse 80% 60% at 50% 0%, rgba(212,175,55,0.05) 0%, transparent 70%),
+        radial-gradient(ellipse 80% 60% at 50% 100%, rgba(212,175,55,0.04) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+/* Horizontal gold rules */
+.fv-top-rule,
+.fv-bottom-rule {
+    position: absolute;
+    left: 8vw;
+    right: 8vw;
+    height: 1px;
+    background: linear-gradient(
+        to right,
+        transparent,
+        rgba(212, 175, 55, 0.3) 20%,
+        rgba(212, 175, 55, 0.3) 80%,
+        transparent
+    );
+}
+
+.fv-top-rule    { top: 0; }
+.fv-bottom-rule { bottom: 0; }
+
+/* ---- Centered header ---- */
+.fv-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.8rem;
+    margin-bottom: 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+/* Overline with flanking decorative lines */
+.fv-overline-row {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+}
+
+.fv-overline-line {
+    width: 40px;
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(212,175,55,0.5));
+}
+
+.fv-overline-row .fv-overline-line:last-child {
+    background: linear-gradient(to left, transparent, rgba(212,175,55,0.5));
+}
+
+.fv-overline {
+    font-family: var(--font-sans);
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 7px;
+    color: var(--accent-gold);
+    display: block;
+    opacity: 0.85;
+}
+
+.fv-heading {
+    font-family: var(--font-display);
+    font-size: clamp(2.4rem, 6vw, 5rem);
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: 0.08em;
+    color: var(--text-light);
+    text-transform: uppercase;
+    text-shadow:
+        0 0 40px rgba(212,175,55,0.06),
+        0 2px 20px rgba(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.3em;
+    flex-wrap: wrap;
+}
+
+.fv-heading em {
+    font-style: italic;
+    font-family: var(--font-serif);
+    font-weight: 400;
+    font-size: 1.35em;
+    color: var(--accent-gold);
+    letter-spacing: 0.02em;
+    line-height: 1;
+    transform: translateY(-0.1em);
+    display: inline-block;
+}
+
+.fv-subtext {
+    font-family: var(--font-sans);
+    font-size: 0.82rem;
+    color: rgba(255,255,255,0.35);
+    letter-spacing: 2px;
+    line-height: 2;
+    text-align: center;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+
+/* ---- Video stage (centered container) ---- */
+.fv-stage {
+    position: relative;
+    z-index: 1;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 5vw;
+}
+
+/* The player wrapper — holds both poster and iframe */
+.fv-player {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    background: #000;
+    cursor: pointer;
+    border: 1px solid rgba(212, 175, 55, 0.18);
+    border-radius: 3px;
+    overflow: visible; /* allow corners to bleed */
+    box-shadow:
+        0 40px 100px rgba(0, 0, 0, 0.8),
+        inset 0 0 0 1px rgba(255,255,255,0.03);
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.fv-player--active {
+    cursor: default;
+    border-color: rgba(212, 175, 55, 0.35);
+    box-shadow:
+        0 50px 120px rgba(0, 0, 0, 0.9),
+        0 0 80px rgba(212, 175, 55, 0.07);
+}
+
+/* The iframe fills the player when active */
+.fv-player iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+    border-radius: 2px;
+}
+
+/* ---- Ambient glow ---- */
+.fv-frame-glow {
+    position: absolute;
+    inset: -20%;
+    background: radial-gradient(
+        ellipse at center,
+        rgba(212, 175, 55, 0.09) 0%,
+        transparent 65%
+    );
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* ---- Poster layer ---- */
+.fv-poster {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    border-radius: 2px;
+}
+
+.fv-poster-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: brightness(0.55) contrast(1.1);
+    transition: filter 0.15s ease, transform 0.15s ease;
+}
+
+.fv-player:hover .fv-poster-img {
+    filter: brightness(0.45) contrast(1.15);
+    transform: scale(1.02);
+}
+
+/* Subtle vignette on the poster */
+.fv-poster-overlay {
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(ellipse at center, transparent 35%, rgba(0,0,0,0.65) 100%),
+        linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.1) 50%, rgba(0,0,0,0.4) 100%);
+    pointer-events: none;
+}
+
+/* ---- Custom play button ---- */
+.fv-play-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+    transition: transform 0.15s ease;
+}
+
+.fv-player:hover .fv-play-btn {
+    transform: translate(-50%, -52%);
+}
+
+/* Animated pulsing ring */
+.fv-play-ring {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 1px solid rgba(212, 175, 55, 0.35);
+    animation: fv-ring-pulse 2.4s ease-out infinite;
+    pointer-events: none;
+}
+
+@keyframes fv-ring-pulse {
+    0%   { transform: translate(-50%, -50%) scale(0.85); opacity: 0.6; }
+    70%  { transform: translate(-50%, -50%) scale(1.35); opacity: 0; }
+    100% { transform: translate(-50%, -50%) scale(1.35); opacity: 0; }
+}
+
+/* The play circle icon */
+.fv-play-icon {
+    width: 68px;
+    height: 68px;
+    color: #fff;
+    background: rgba(0,0,0,0.35);
+    border: 1.5px solid rgba(255,255,255,0.7);
+    border-radius: 50%;
+    padding: 18px 14px 18px 22px; /* optical shift for play triangle */
+    box-shadow: 0 8px 32px rgba(0,0,0,0.5), 0 0 0 0 rgba(212,175,55,0);
+    transition: border-color 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+}
+
+.fv-player:hover .fv-play-icon {
+    border-color: var(--accent-gold);
+    background: rgba(0,0,0,0.5);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.6), 0 0 0 8px rgba(212,175,55,0.08);
+}
+
+/* PLAY text label */
+.fv-play-label {
+    font-family: var(--font-sans);
+    font-size: 0.62rem;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.45);
+    transition: color 0.15s ease;
+    margin-top: 0.4rem;
+}
+
+.fv-player:hover .fv-play-label {
+    color: var(--accent-gold);
+}
+
+/* Bottom-left meta tag */
+.fv-poster-meta {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 1.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-family: var(--font-sans);
+    font-size: 0.62rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: rgba(255,255,255,0.3);
+}
+
+.fv-meta-dot {
+    color: var(--accent-gold);
+    opacity: 0.5;
+}
+
+/* ---- Gold corner brackets (outside the border) ---- */
+.fv-corner {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    pointer-events: none;
+    z-index: 3;
+    transition: opacity 0.4s ease;
+}
+
+.fv-corner::before,
+.fv-corner::after {
+    content: '';
+    position: absolute;
+    background: rgba(212, 175, 55, 0.55);
+    transition: background 0.4s ease;
+}
+
+.fv-player:hover .fv-corner::before,
+.fv-player:hover .fv-corner::after {
+    background: rgba(212, 175, 55, 0.85);
+}
+
+.fv-corner::before { width: 100%; height: 1px; }
+.fv-corner::after  { width: 1px; height: 100%; }
+
+.fv-corner-tl { top: -6px;    left: -6px;  }
+.fv-corner-tl::before { top: 0;    left: 0; }
+.fv-corner-tl::after  { top: 0;    left: 0; }
+
+.fv-corner-tr { top: -6px;    right: -6px; }
+.fv-corner-tr::before { top: 0;    right: 0; }
+.fv-corner-tr::after  { top: 0;    right: 0; }
+
+.fv-corner-bl { bottom: -6px; left: -6px;  }
+.fv-corner-bl::before { bottom: 0; left: 0; }
+.fv-corner-bl::after  { bottom: 0; left: 0; }
+
+.fv-corner-br { bottom: -6px; right: -6px; }
+.fv-corner-br::before { bottom: 0; right: 0; }
+.fv-corner-br::after  { bottom: 0; right: 0; }
+
+/* ---- Responsive ---- */
+@media (max-width: 768px) {
+    .featured-video-section {
+        padding: 6rem 0 7rem;
+    }
+
+    .fv-header {
+        margin-bottom: 3.5rem;
+    }
+
+    .fv-play-icon {
+        width: 54px;
+        height: 54px;
+        padding: 14px 11px 14px 17px;
+    }
+
+    .fv-play-ring {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+@media (max-width: 480px) {
+    .fv-stage {
+        padding: 0 1.5rem;
+    }
+
+    .fv-poster-meta {
+        display: none;
+    }
+}
+

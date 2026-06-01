@@ -12,6 +12,7 @@ export default function ExhibitionPage() {
     const containerRef = useRef(null);
     const headingRef = useRef(null);
     const [selectedItem, setSelectedItem] = useState(null);
+    const [videoActive, setVideoActive] = useState(true);
 
     useIsomorphicLayoutEffect(() => {
         let ctx;
@@ -238,6 +239,82 @@ export default function ExhibitionPage() {
                         </div>
 
                     </div>
+                </section>
+
+                {/* --- Featured Video Section --- */}
+                <section className="featured-video-section">
+                    <div className="fv-top-rule"></div>
+
+                    {/* Header */}
+                    <div className="fv-header">
+                        <div className="fv-overline-row">
+                            <div className="fv-overline-line"></div>
+                            <span className="fv-overline">Featured Work</span>
+                            <div className="fv-overline-line"></div>
+                        </div>
+                        <h2 className="fv-heading">
+                            <span>THE</span>
+                            <em>ART</em>
+                            <span>OF FINISH</span>
+                        </h2>
+                        <p className="fv-subtext">
+                            Born from limestone and light.<br />
+                            The craft of Venetian Plaster, in motion.
+                        </p>
+                    </div>
+
+                    {/* Video */}
+                    <div className="fv-stage">
+                        <div
+                            className={`fv-player${videoActive ? ' fv-player--active' : ''}`}
+                            onClick={() => !videoActive && setVideoActive(true)}
+                        >
+                            {/* Gold corner brackets */}
+                            <div className="fv-corner fv-corner-tl"></div>
+                            <div className="fv-corner fv-corner-tr"></div>
+                            <div className="fv-corner fv-corner-bl"></div>
+                            <div className="fv-corner fv-corner-br"></div>
+
+                            {/* Ambient glow */}
+                            <div className="fv-frame-glow"></div>
+
+                            {/* Thumbnail poster — hidden once active */}
+                            {!videoActive && (
+                                <div className="fv-poster">
+                                    <img
+                                        src="https://img.youtube.com/vi/lUXSZm4felY/maxresdefault.jpg"
+                                        alt="Exotic Wall Finishes – The Art of Finish"
+                                        className="fv-poster-img"
+                                    />
+                                    <div className="fv-poster-overlay"></div>
+                                    <button className="fv-play-btn" aria-label="Play video">
+                                        <div className="fv-play-ring"></div>
+                                        <svg className="fv-play-icon" viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M8 5v14l11-7z" />
+                                        </svg>
+                                        <span className="fv-play-label">PLAY</span>
+                                    </button>
+                                    <div className="fv-poster-meta">
+                                        <span>Venetian Plaster</span>
+                                        <span className="fv-meta-dot">·</span>
+                                        <span>Exotic Studio</span>
+                                    </div>
+                                </div>
+                            )}
+
+                            {/* The actual iframe — only mounted when active */}
+                            {videoActive && (
+                                <iframe
+                                    src="https://www.youtube.com/embed/lUXSZm4felY?rel=0&modestbranding=1&autoplay=1&mute=1&controls=0&color=white"
+                                    title="Exotic Wall Finishes – The Art of Finish"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowFullScreen
+                                ></iframe>
+                            )}
+                        </div>
+                    </div>
+
+                    <div className="fv-bottom-rule"></div>
                 </section>
 
                 {/* --- YouTube Promo Section --- */}

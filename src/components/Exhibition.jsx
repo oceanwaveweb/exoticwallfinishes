@@ -59,7 +59,7 @@ export default function Exhibition() {
                 <div ref={headingRef} className="exhibition-title-area" style={{ position: 'relative', top: 'auto', width: '100%' }}>
                     <div className="exhibition-heading">
                         <span className="exhibition-overline exhibit-word">02 / Gallery</span>
-                        <h2 className="exhibition-main-title exhibition-cinematic-title">
+                        <h2 className="exhibition-main-title">
                             <span className="exhibit-word" style={{ display: 'inline-block' }}>EXOTIC</span>{' '}
                             <br className="mobile-br" />
                             <span className="exhibit-word" style={{ display: 'inline-block' }}>WORKS</span>

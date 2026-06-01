@@ -72,7 +72,7 @@ export default function Commission() {
                         <textarea id="details" placeholder="Project Details" rows="1" required></textarea>
                         <label htmlFor="details">Project Details</label>
                     </div>
-                    <button type="submit" className="brutal-btn">Submit</button>
+                    <button type="submit" id="request-a-quote" className="brutal-btn request-a-quote">Request a Quote</button>
                 </form>
             </div>
         </section>

@@ -11,8 +11,43 @@ const useIsomorphicLayoutEffect = typeof window !== 'undefined' ? useLayoutEffec
 export default function ExhibitionPage() {
     const containerRef = useRef(null);
     const headingRef = useRef(null);
+    const iframeRef = useRef(null);
     const [selectedItem, setSelectedItem] = useState(null);
-    const [videoActive, setVideoActive] = useState(true);
+    const [videoActive, setVideoActive] = useState(false);
+
+    // Pause/resume based on scroll visibility (after player is ready)
+    useEffect(() => {
+        if (!videoActive) return;
+        const iframe = iframeRef.current;
+        if (!iframe) return;
+
+        let observer;
+        let timer;
+
+        const setupObserver = () => {
+            observer = new IntersectionObserver(
+                ([entry]) => {
+                    const func = entry.isIntersecting ? 'playVideo' : 'pauseVideo';
+                    iframe.contentWindow?.postMessage(
+                        JSON.stringify({ event: 'command', func, args: [] }),
+                        '*'
+                    );
+                },
+                { threshold: 0.2 }
+            );
+            observer.observe(iframe);
+        };
+
+        // Wait for iframe to load, then give YouTube API 1s to fully initialise
+        const handleLoad = () => { timer = setTimeout(setupObserver, 1000); };
+        iframe.addEventListener('load', handleLoad);
+
+        return () => {
+            clearTimeout(timer);
+            iframe.removeEventListener('load', handleLoad);
+            observer?.disconnect();
+        };
+    }, [videoActive]);
 
     useIsomorphicLayoutEffect(() => {
         let ctx;
@@ -305,7 +340,8 @@ export default function ExhibitionPage() {
                             {/* The actual iframe — only mounted when active */}
                             {videoActive && (
                                 <iframe
-                                    src="https://www.youtube.com/embed/lUXSZm4felY?rel=0&modestbranding=1&autoplay=1&mute=1&controls=0&color=white"
+                                    ref={iframeRef}
+                                    src="https://www.youtube.com/embed/lUXSZm4felY?rel=0&modestbranding=1&autoplay=1&controls=1&color=white&enablejsapi=1"
                                     title="Exotic Wall Finishes – The Art of Finish"
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                     allowFullScreen

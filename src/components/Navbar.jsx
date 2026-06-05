@@ -61,7 +61,7 @@ export default function Navbar() {
 
             <div className="side-nav">
                 <Link href="/" className="side-nav-link" scroll={false} onClick={e => handleNavClick(e, '/')}>HOME</Link>
-                <Link href="/atelier" className="side-nav-link" scroll={false} onClick={e => handleNavClick(e, '/atelier')}>STUDIO</Link>
+                <Link href="/studio" className="side-nav-link" scroll={false} onClick={e => handleNavClick(e, '/studio')}>STUDIO</Link>
                 <Link href="/gallery" className="side-nav-link" scroll={false} onClick={e => handleNavClick(e, '/gallery')}>GALLERY</Link>
                 <Link href="/commission" className="side-nav-link" scroll={false} onClick={e => handleNavClick(e, '/commission')}>CONTACT</Link>
             </div>

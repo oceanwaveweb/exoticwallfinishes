@@ -13,32 +13,30 @@ export default function ExhibitionPage() {
     const headingRef = useRef(null);
     const iframeRef = useRef(null);
     const [selectedItem, setSelectedItem] = useState(null);
-    const [videoActive, setVideoActive] = useState(false);
+    const [isMuted, setIsMuted] = useState(true);
 
-    // Pause/resume based on scroll visibility (after player is ready)
+    // Auto-play when visible, pause when scrolled out
     useEffect(() => {
-        if (!videoActive) return;
         const iframe = iframeRef.current;
         if (!iframe) return;
 
         let observer;
         let timer;
 
+        const sendCmd = (func) =>
+            iframe.contentWindow?.postMessage(
+                JSON.stringify({ event: 'command', func, args: [] }),
+                '*'
+            );
+
         const setupObserver = () => {
             observer = new IntersectionObserver(
-                ([entry]) => {
-                    const func = entry.isIntersecting ? 'playVideo' : 'pauseVideo';
-                    iframe.contentWindow?.postMessage(
-                        JSON.stringify({ event: 'command', func, args: [] }),
-                        '*'
-                    );
-                },
+                ([entry]) => sendCmd(entry.isIntersecting ? 'playVideo' : 'pauseVideo'),
                 { threshold: 0.2 }
             );
             observer.observe(iframe);
         };
 
-        // Wait for iframe to load, then give YouTube API 1s to fully initialise
         const handleLoad = () => { timer = setTimeout(setupObserver, 1000); };
         iframe.addEventListener('load', handleLoad);
 
@@ -47,7 +45,19 @@ export default function ExhibitionPage() {
             iframe.removeEventListener('load', handleLoad);
             observer?.disconnect();
         };
-    }, [videoActive]);
+    }, []);
+
+    // Toggle mute/unmute
+    const toggleMute = () => {
+        const iframe = iframeRef.current;
+        if (!iframe) return;
+        const func = isMuted ? 'unMute' : 'mute';
+        iframe.contentWindow?.postMessage(
+            JSON.stringify({ event: 'command', func, args: [] }),
+            '*'
+        );
+        setIsMuted(prev => !prev);
+    };
 
     useIsomorphicLayoutEffect(() => {
         let ctx;
@@ -300,10 +310,7 @@ export default function ExhibitionPage() {
 
                     {/* Video */}
                     <div className="fv-stage">
-                        <div
-                            className={`fv-player${videoActive ? ' fv-player--active' : ''}`}
-                            onClick={() => !videoActive && setVideoActive(true)}
-                        >
+                        <div className="fv-player fv-player--active">
                             {/* Gold corner brackets */}
                             <div className="fv-corner fv-corner-tl"></div>
                             <div className="fv-corner fv-corner-tr"></div>
@@ -313,40 +320,38 @@ export default function ExhibitionPage() {
                             {/* Ambient glow */}
                             <div className="fv-frame-glow"></div>
 
-                            {/* Thumbnail poster — hidden once active */}
-                            {!videoActive && (
-                                <div className="fv-poster">
-                                    <img
-                                        src="https://img.youtube.com/vi/lUXSZm4felY/maxresdefault.jpg"
-                                        alt="Exotic Wall Finishes – The Art of Finish"
-                                        className="fv-poster-img"
-                                    />
-                                    <div className="fv-poster-overlay"></div>
-                                    <button className="fv-play-btn" aria-label="Play video">
-                                        <div className="fv-play-ring"></div>
-                                        <svg className="fv-play-icon" viewBox="0 0 24 24" fill="currentColor">
-                                            <path d="M8 5v14l11-7z" />
-                                        </svg>
-                                        <span className="fv-play-label">PLAY</span>
-                                    </button>
-                                    <div className="fv-poster-meta">
-                                        <span>Venetian Plaster</span>
-                                        <span className="fv-meta-dot">·</span>
-                                        <span>Exotic Studio</span>
-                                    </div>
-                                </div>
-                            )}
+                            {/* Always-mounted iframe — muted autoplay, scroll-controlled */}
+                            <iframe
+                                ref={iframeRef}
+                                src="https://www.youtube.com/embed/lUXSZm4felY?rel=0&modestbranding=1&autoplay=1&mute=1&controls=1&color=white&enablejsapi=1"
+                                title="Exotic Wall Finishes – The Art of Finish"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowFullScreen
+                            ></iframe>
 
-                            {/* The actual iframe — only mounted when active */}
-                            {videoActive && (
-                                <iframe
-                                    ref={iframeRef}
-                                    src="https://www.youtube.com/embed/lUXSZm4felY?rel=0&modestbranding=1&autoplay=1&controls=1&color=white&enablejsapi=1"
-                                    title="Exotic Wall Finishes – The Art of Finish"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                    allowFullScreen
-                                ></iframe>
-                            )}
+                            {/* Unmute toggle */}
+                            <button
+                                onClick={toggleMute}
+                                aria-label={isMuted ? 'Unmute video' : 'Mute video'}
+                                style={{
+                                    position: 'absolute', bottom: '1rem', right: '1rem',
+                                    zIndex: 10, background: 'rgba(0,0,0,0.6)',
+                                    border: '1px solid rgba(212,175,55,0.5)', borderRadius: '50%',
+                                    width: '2.5rem', height: '2.5rem', cursor: 'pointer',
+                                    display: 'flex', alignItems: 'center', justifyContent: 'center',
+                                    color: 'var(--accent-gold)', transition: 'background 0.3s'
+                                }}
+                            >
+                                {isMuted ? (
+                                    <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                                        <path d="M16.5 12A4.5 4.5 0 0 0 14 7.97v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51A8.796 8.796 0 0 0 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3 3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06A8.99 8.99 0 0 0 17.73 19l2 2L21 19.73 4.27 3zM12 4 9.91 6.09 12 8.18V4z"/>
+                                    </svg>
+                                ) : (
+                                    <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                                        <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3A4.5 4.5 0 0 0 14 7.97v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                                    </svg>
+                                )}
+                            </button>
                         </div>
                     </div>
 

@@ -58,7 +58,7 @@ export default function Exhibition() {
             <div className="sticky-container">
                 <div ref={headingRef} className="exhibition-title-area" style={{ position: 'relative', top: 'auto', width: '100%' }}>
                     <div className="exhibition-heading">
-                        <span className="exhibition-overline exhibit-word">02 / Gallery</span>
+                        <span className="exhibition-overline exhibit-word">[ GALLERY ]</span>
                         <h2 className="exhibition-main-title">
                             <span className="exhibit-word" style={{ display: 'inline-block' }}>EXOTIC</span>{' '}
                             <br className="mobile-br" />
@@ -93,7 +93,7 @@ export default function Exhibition() {
                     {/* Aesthetic CTA Card */}
                     <div className="gallery-item exhibit-cta-card reveals fade-in-up">
                         <div className="cta-content">
-                            <span className="cta-overline">03 / The Collection</span>
+                            <span className="cta-overline">[ THE COLLECTION ]</span>
                             <h3 className="cta-title">EXPLORE ALL <br />EXOTIC WORKS</h3>
                             <Link href="/gallery" className="cta-button-link">
                                 <div className="cta-action">

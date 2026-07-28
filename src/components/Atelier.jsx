@@ -3,7 +3,7 @@ export default function Atelier() {
         <section className="atelier" id="atelier">
             <div className="container layout-offset">
                 <div className="text-block reveals slide-in-left">
-                    <span className="overline">01 / The Artisan</span>
+                    <span className="overline">[ THE ARTISAN ]</span>
                     <h2 className="display-title">Gian Carlo<br />Sagasti</h2>
                     <p className="bio-lead">
                         Gian Carlo Sagasti, founder and visionary of Exotic Wall Finishes & Design, established in Miami, Florida since 2015.
@@ -38,7 +38,7 @@ export default function Atelier() {
                 </div>
                 <div className="image-block reveals zoom-in delay-1">
                     <div className="aspect-portrait">
-                        <img src="/images/artisan_trowel_1772909203882.jpg" alt="Gian Carlo Sagasti Trowel" />
+                        <img src="/images/artisan_trowel_1772909203882.jpg" alt="Master Artisan Gian Carlo Sagasti Hand Applying Venetian Plaster with Stainless Steel Burnishing Trowel" />
                     </div>
                 </div>
             </div>

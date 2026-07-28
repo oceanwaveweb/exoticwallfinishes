@@ -283,10 +283,9 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    /* Removed JS parallax support */
 }
 
-/* Gradient fade over image to blend with black */
+/* Gradient fade over image to blend with black background */
 .hero-image-wrapper::after {
     content: '';
     position: absolute;
@@ -305,16 +304,28 @@ body {
 
 .split-text {
     font-family: var(--font-display);
-    font-size: clamp(3rem, 9vw, 10rem);
-    line-height: 1;
+    font-size: clamp(3.5rem, 9vw, 9.5rem);
+    line-height: 0.95;
+    letter-spacing: 0.04em;
     color: var(--text-light);
     mix-blend-mode: difference;
-    /* Layered premium glow */
     text-shadow:
         0 0 10px rgba(255, 255, 255, 0.3),
         0 0 20px rgba(255, 255, 255, 0.2),
         0 0 40px rgba(212, 175, 55, 0.15);
     animation: glow-pulse 4s ease-in-out infinite alternate;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
 }
 
 @keyframes glow-pulse {

@@ -51,7 +51,7 @@ export default function Commission() {
     return (
         <section className="commission" id="commission">
             <div className="container text-center reveals fade-in-up">
-                <span className="overline">03 / Contact</span>
+                <span className="overline">[ CONTACT & COMMISSION ]</span>
                 <h2 className="premium-editorial-title" ref={headingRef} style={{ fontSize: 'clamp(2rem, 7vw, 5rem)', marginBottom: '4rem', whiteSpace: 'nowrap' }}>
                     <span className="reveal-wrapper">
                         <span className="reveal-text">GET IN TOUCH</span>
